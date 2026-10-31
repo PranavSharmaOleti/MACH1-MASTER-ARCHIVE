@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MACH1 / FleetLine E1 — Synthesis</title>
+<style>
+  :root {
+    --ink:    #101318;
+    --body:   #474e57;
+    --muted:  #6b7280;
+    --faint:  #8b929c;
+    --rule:   #e6e9ee;
+    --rule-2: #d3d8e0;
+    --head:   #161b23;
+
+    --pt:   #1d4ed8;
+    --sf:   #b3382c;
+    --up:   #0f7a4d;
+    --dr:   #9a5b00;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #ffffff;
+    color: var(--body);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 12.5px;
+    line-height: 1.45;
+    padding: 24px 36px 26px;
+    display: inline-block;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .mono, .kicker, .node, .bh, .chip, .seg-h, .fig, .big, .foot-strip, .met {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono",
+                 Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  .sheet { width: 1368px; }
+
+  /* ================= masthead ================= */
+  .masthead {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule-2);
+    padding: 7px 0 8px 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 11px;
+  }
+  .kicker {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pt);
+    margin-bottom: 4px;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    letter-spacing: -0.012em;
+  }
+  .masthead .r {
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+    white-space: nowrap;
+    line-height: 1.7;
+  }
+  .masthead .r b { color: var(--ink); font-weight: 600; }
+
+  /* ================= numbered spine ================= */
+  .chain { position: relative; padding-left: 54px; }
+  .chain::before {
+    content: "";
+    position: absolute;
+    left: 19px; top: 11px; bottom: 11px;
+    width: 2px;
+    background: #c3cad4;
+  }
+
+  .step {
+    position: relative;
+    margin-bottom: 7px;
+    --acc: var(--pt);
+    --tint: rgba(29,78,216,0.055);
+  }
+  .step:last-of-type { margin-bottom: 0; }
+
+  .node {
+    position: absolute;
+    left: -45px;
+    top: 2px;
+    width: 22px; height: 22px;
+    border: 1.5px solid var(--acc);
+    background: #ffffff;
+    color: var(--acc);
+    font-size: 9px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step.pivot .node { background: var(--acc); color: #ffffff; }
+
+  .step.s1 { --acc: var(--sf); --tint: rgba(179,56,44,0.05); }
+  .step.s2 { --acc: var(--pt); --tint: rgba(29,78,216,0.06); }
+  .step.s3 { --acc: var(--dr); --tint: rgba(154,91,0,0.06); }
+  .step.s4 { --acc: var(--up); --tint: rgba(15,122,77,0.06); }
+  .step.s5 { --acc: var(--pt); --tint: rgba(29,78,216,0.05); }
+  .step.s6 { --acc: var(--ink); --tint: rgba(16,19,24,0.035); }
+
+  .block {
+    border-left: 4px solid var(--acc);
+    background: var(--tint);
+    padding: 8px 16px 9px 16px;
+  }
+
+  .bh {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--acc);
+    margin-bottom: 6px;
+  }
+  .bh em { font-style: normal; color: var(--muted); letter-spacing: 0.1em; }
+
+  p { font-size: 12.5px; line-height: 1.45; color: var(--body); }
+  p b { color: var(--ink); font-weight: 600; }
+  .fig { font-weight: 700; color: var(--acc, var(--pt)); letter-spacing: -0.025em; }
+
+  /* ================= 2 · the pivot ================= */
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .seg {
+    border: 1px solid var(--rule-2);
+    padding: 8px 13px 9px 13px;
+  }
+  .seg.vol { border-left: 3px solid var(--faint); background: #fcfcfd; }
+  .seg.mar {
+    border-left: 3px solid var(--pt);
+    background: rgba(29,78,216,0.07);
+  }
+  .seg-h {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .seg.vol .seg-h { color: var(--muted); }
+
+  .chip {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.65;
+    padding: 0 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .chip.ghost { background: #ffffff; color: #5c6470; border: 1px solid #c6ccd5; }
+  .chip.solid { background: var(--pt); color: #ffffff; box-shadow: 0 1px 0 rgba(29,78,216,0.35); }
+
+  .seg .desc {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .seg.vol .desc { color: var(--muted); font-weight: 500; }
+
+  .mets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 14px; }
+  .met {
+    font-size: 10px;
+    color: var(--muted);
+    padding: 3px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .seg.mar .met { color: #102a7d; font-weight: 600; }
+
+  .pivot-foot {
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px solid rgba(29,78,216,0.25);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ================= 3 · the vehicle ================= */
+  .specs {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .specs .fig { font-size: 12.5px; color: var(--dr); }
+  .under { margin-top: 5px; font-size: 12.5px; color: var(--body); }
+  .under b { color: var(--ink); font-weight: 600; }
+
+  /* ================= 4 · the math ================= */
+  .bigwrap { display: flex; align-items: baseline; gap: 38px; }
+  .bigfig { display: flex; align-items: baseline; gap: 9px; }
+  .big {
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--up);
+    letter-spacing: -0.02em;
+  }
+  .big-lb { font-size: 11.5px; font-weight: 600; color: var(--ink); }
+  .qual {
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(15,122,77,0.25);
+    font-size: 11.5px;
+    color: var(--body);
+  }
+  .admit {
+    margin-top: 7px;
+    padding: 7px 11px;
+    background: rgba(16,19,24,0.055);
+    border-left: 3px solid var(--ink);
+    font-size: 11.5px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .sub { margin-top: 5px; font-size: 10.5px; color: var(--muted); }
+
+  /* ================= footer strip ================= */
+  .foot-strip {
+    margin: 10px 0 0 54px;
+    border: 1px solid var(--rule-2);
+    border-left: 4px solid var(--ink);
+    background: #fafbfc;
+    padding: 8px 14px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .foot-strip .fig { color: var(--pt); }
+
+  @media print {
+    body { padding: 0; }
+    .step, .block, .pair, .seg, .foot-strip { break-inside: avoid; page-break-inside: avoid; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <div>
+      <div class="kicker">MACH1 · FleetLine E1</div>
+      <h1>The argument, in six steps</h1>
+    </div>
+    <div class="r">Synthesis<br><b>Delhi · 200 km/day</b></div>
+  </div>
+
+  <div class="chain">
+
+    <!-- ============ 1 · THE PROBLEM ============ -->
+    <div class="step s1">
+      <div class="node">1</div>
+      <div class="block">
+        <div class="bh">The Problem</div>
+        <p>Indian ride-hailing fleets run on CNG — not by preference, because nothing was built
+        for their duty cycle. Fleet duty is <span class="fig">200 km/day</span>, 312 days a year,
+        return-to-base every night. It is the most demanding duty cycle an EV can have, and the
+        one the Indian market has served worst.</p>
+      </div>
+    </div>
+
+    <!-- ============ 2 · THE INSIGHT (pivot) ============ -->
+    <div class="step s2 pivot">
+      <div class="node">2</div>
+      <div class="block">
+        <div class="bh">The Insight <em>— the pivot</em></div>
+        <p>Volume and margin live in different segments, and they need different vehicles.</p>
+        <div class="pair">
+          <div class="seg vol">
+            <div class="seg-h"><span class="chip ghost">VOLUME</span>Not specified for</div>
+            <div class="desc">street-hail intra-city</div>
+            <div class="mets">
+              <div class="met">~58% of rides</div>
+              <div class="met">unpredictable dispatch</div>
+              <div class="met">price sensitivity 0.85</div>
+              <div class="met">~10% EV adoption</div>
+            </div>
+          </div>
+          <div class="seg mar">
+            <div class="seg-h"><span class="chip solid">MARGIN</span>Specified for</div>
+            <div class="desc">airport + corporate commute</div>
+            <div class="mets">
+              <div class="met">~19% combined</div>
+              <div class="met">144–210 paid km/day</div>
+              <div class="met">pre-booked</div>
+              <div class="met">price sensitivity 0.30–0.35</div>
+              <div class="met">~18% EV adoption</div>
+            </div>
+          </div>
+        </div>
+        <div class="pivot-foot">We did not chase the largest segment. We specified for the one
+        where the economics close.</div>
+      </div>
+    </div>
+
+    <!-- ============ 3 · THE VEHICLE ============ -->
+    <div class="step s3">
+      <div class="node">3</div>
+      <div class="block">
+        <div class="bh">The Vehicle</div>
+        <div class="specs">BEV &nbsp;·&nbsp; LFP <span class="fig">45 kWh</span>
+        &nbsp;·&nbsp; PMSM <span class="fig">80 bhp</span> &nbsp;·&nbsp;
+        <span class="fig">315 km</span> &nbsp;·&nbsp;
+        <span class="fig">3,995 mm</span> — deliberately 5 mm inside the small-car tax line</div>
+        <div class="under">Designed around one number: <b>200 km/day</b>, return-to-base, one
+        <b>7.4 kW</b> AC port, overnight.</div>
+      </div>
+    </div>
+
+    <!-- ============ 4 · THE MATH ============ -->
+    <div class="step s4">
+      <div class="node">4</div>
+      <div class="block">
+        <div class="bh">The Math</div>
+        <div class="bigwrap">
+          <div class="bigfig"><span class="big">+6.7%</span><span class="big-lb">over 5 years</span></div>
+          <div class="bigfig"><span class="big">+14.6%</span><span class="big-lb">over 8 years</span></div>
+        </div>
+        <div class="qual">NPV at a <span class="fig">12%</span> hurdle, escalated,
+        <b>with the <span class="fig">₹99,000</span>/vehicle depot charger inside the cost
+        boundary</b>.</div>
+        <div class="admit">Delhi. Mumbai does not clear at five years once the charger is
+        counted. We are saying so on our own page.</div>
+        <div class="sub">Broker and platform fees are identical on both vehicles, so the
+        EV-vs-CNG difference is unaffected by how commission is structured.</div>
+      </div>
+    </div>
+
+    <!-- ============ 5 · WHY LFP ============ -->
+    <div class="step s5">
+      <div class="node">5</div>
+      <div class="block">
+        <div class="bh">Why LFP, and what we admit</div>
+        <p>Published LFP studies disagree <span class="fig">3.6×</span> on time-to-80%. So
+        per-cell State-of-Health telemetry is specified, <b>not optional</b> — it is the mechanism
+        that makes an 8-year capacity-retention guarantee credible.</p>
+      </div>
+    </div>
+
+    <!-- ============ 6 · THE RISK ============ -->
+    <div class="step s6 risk">
+      <div class="node">6</div>
+      <div class="block">
+        <div class="bh">The Risk We Cannot Hedge</div>
+        <p style="font-size:13.5px;line-height:1.46;color:var(--ink);font-weight:600;">
+        No central scheme pays for an electric passenger car. PM E-DRIVE covers 2W, 3W, buses,
+        trucks, ambulances and charging — not 4W cars. This case is built without a subsidy that
+        does not exist.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="foot-strip">
+    <span class="fig">1,000–2,000</span> vehicles, Delhi, gated on cell supply &nbsp;·&nbsp;
+    measured duty &nbsp;·&nbsp; twelve months of our own battery data.
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FleetLine E1 — Fleet Feature Specification</title>
+<style>
+  :root {
+    --ink:    #101318;
+    --body:   #474e57;
+    --muted:  #6b7280;
+    --rule:   #e6e9ee;
+    --rule-2: #d3d8e0;
+    --head:   #161b23;
+
+    --pt:   #1d4ed8;   /* powertrain  — also the universal ADD accent */
+    --sf:   #b3382c;   /* safety      */
+    --up:   #0f7a4d;   /* uptime      */
+    --dr:   #9a5b00;   /* driver      */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #ffffff;
+    color: var(--body);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.42;
+    padding: 12px;
+    display: inline-block;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .mono, .chip, .band .lbl, thead th {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono",
+                 Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  /* ---------- caption ---------- */
+  .caption {
+    font-size: 11px;
+    line-height: 1.38;
+    color: var(--ink);
+    max-width: 676px;
+    margin-bottom: 8px;
+  }
+  .caption b { font-weight: 700; }
+  .caption .u { color: var(--pt); font-weight: 700; }
+
+  /* ---------- frame ---------- */
+  table {
+    width: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid var(--rule-2);
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule-2);
+  }
+
+  col.c-f { width: 45%; }
+  col.c-v { width: 55%; }
+
+  thead th {
+    background: var(--head);
+    color: #ffffff;
+    text-align: left;
+    padding: 5px 11px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  thead th + th { border-left: 1px solid rgba(255,255,255,0.14); }
+
+  /* ---------- band identity ---------- */
+  tbody.powertrain { --acc: var(--pt); --tint: rgba(29,78,216,0.07); }
+  tbody.safety     { --acc: var(--sf); --tint: rgba(179,56,44,0.075); }
+  tbody.uptime     { --acc: var(--up); --tint: rgba(15,122,77,0.075); }
+  tbody.driver     { --acc: var(--dr); --tint: rgba(154,91,0,0.085); }
+
+  tr.band td {
+    background: var(--tint);
+    border-top: 1px solid var(--rule-2);
+    border-bottom: 1px solid var(--rule-2);
+    padding: 3px 11px;
+    box-shadow: inset 4px 0 0 var(--acc);
+  }
+  .band .lbl {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--acc);
+  }
+  .band .n {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono",
+                 Menlo, Consolas, monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.09em;
+    color: var(--muted);
+    float: right;
+    padding-top: 1px;
+  }
+
+  /* ---------- rows ---------- */
+  tbody tr.row td {
+    padding: 4px 11px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: middle;
+  }
+  tbody tr.row:last-child td { border-bottom: none; }
+  tbody tr.row td + td { border-left: 1px solid var(--rule); }
+  tbody tr.row td.c1 { box-shadow: inset 3px 0 0 var(--acc); }
+
+  /* feature cell: status chip sits inline, tight against the name */
+  .fname {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.32;
+    color: var(--ink);
+    letter-spacing: -0.003em;
+  }
+  .fname .nm { flex: 1 1 auto; min-width: 0; }
+
+  .chip {
+    flex: 0 0 auto;
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+    padding: 0 4px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .chip.spec {
+    background: #ffffff;
+    color: #5c6470;
+    border: 1px solid #c6ccd5;
+  }
+  .chip.add {
+    background: var(--pt);
+    color: #ffffff;
+    box-shadow: 0 1px 0 rgba(29,78,216,0.35);
+  }
+
+  td.v {
+    font-size: 10px;
+    line-height: 1.42;
+    color: var(--body);
+    vertical-align: middle;
+  }
+
+  /* ---------- the peak ---------- */
+  tr.hero td {
+    background: rgba(29,78,216,0.10);
+    border-top: 2px solid var(--pt);
+    border-bottom: 2px solid var(--pt);
+    padding: 6px 11px;
+    vertical-align: middle;
+  }
+  tr.hero td.c1 { box-shadow: inset 5px 0 0 var(--pt); }
+  tr.hero td + td { border-left: 1px solid rgba(29,78,216,0.26); }
+  tr.hero .fname { font-size: 12.5px; font-weight: 700; color: #10246b; }
+  tr.hero td.v {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #102a7d;
+  }
+  tr.hero .tag {
+    flex: 0 0 auto;
+    display: inline-block;
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono",
+                 Menlo, Consolas, monospace;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    background: var(--pt);
+    padding: 0 5px;
+    margin: 0 6px 0 0;
+    vertical-align: 1px;
+  }
+  tr.hero .fig {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono",
+                 Menlo, Consolas, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0;
+    border-bottom: 1.5px solid rgba(29,78,216,0.4);
+  }
+
+  /* ---------- footnote ---------- */
+  .foot {
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px solid var(--rule-2);
+    font-size: 9.5px;
+    line-height: 1.42;
+    color: var(--muted);
+    max-width: 676px;
+  }
+  .foot b { color: var(--ink); font-weight: 600; }
+
+  @media print {
+    body { padding: 0; }
+    tr { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<p class="caption"><b>FleetLine E1</b> — specified for a <span class="u">200&nbsp;km/day</span> depot-charged duty cycle, <span class="u">45&nbsp;kWh LFP</span>.</p>
+
+<table>
+  <colgroup><col class="c-f"><col class="c-v"></colgroup>
+  <thead>
+    <tr>
+      <th>FleetLine E1 feature</th>
+      <th>Why a fleet operator needs it</th>
+    </tr>
+  </thead>
+
+  <tbody class="powertrain">
+    <tr class="band"><td colspan="2"><span class="lbl">Powertrain &amp; Energy</span><span class="n">4 FEATURES</span></td></tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip spec">SPEC</span><span class="nm">45 kWh LFP pack, semi-structural CTP</span></span></td>
+      <td class="v">200 km/day duty with 10% reserve held at year 8</td>
+    </tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip spec">SPEC</span><span class="nm">PMSM 80 bhp, single-speed reduction drive</span></span></td>
+      <td class="v">No shift loss across 62,400 km/yr, and no gearset to maintain</td>
+    </tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip spec">SPEC</span><span class="nm">Liquid-plate cooling, 48 °C cell design point</span></span></td>
+      <td class="v">Holds degradation inside the validated band — passive cooling does not</td>
+    </tr>
+    <tr class="row hero">
+      <td class="c1"><span class="fname"><span class="chip add">ADD</span><span class="nm">Per-cell pack SoH telematics, over-the-air</span></span></td>
+      <td class="v"><span class="tag">DECISIVE</span><span class="lead">THE ONE THAT EARNS THE WARRANTY</span> — published LFP studies disagree <span class="fig">3.6x</span> on time-to-<span class="fig">80%</span>, so a capacity-retention guarantee is only credible if the pack reports its own degradation</td>
+    </tr>
+  </tbody>
+
+  <tbody class="safety">
+    <tr class="band"><td colspan="2"><span class="lbl">Safety &amp; Liability</span><span class="n">3 FEATURES</span></td></tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip spec">SPEC</span><span class="nm">L2 ADAS, six airbags, ABS with EBD + CSC</span></span></td>
+      <td class="v">Corner Stability Control matters more on a tall, pack-loaded sedan</td>
+    </tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip add">ADD</span><span class="nm">360° HD camera with 2D/3D views</span></span></td>
+      <td class="v">Blind-spot elimination at low speed, and dense-city parking without a spotter</td>
+    </tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip add">ADD</span><span class="nm">Dashcam recorder (DVR)</span></span></td>
+      <td class="v">10+ paid hours a day — onboard evidence for disputes, when the driver's account is not enough</td>
+    </tr>
+  </tbody>
+
+  <tbody class="uptime">
+    <tr class="band"><td colspan="2"><span class="lbl">Uptime &amp; Reliability</span><span class="n">1 FEATURE</span></td></tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip add">ADD</span><span class="nm">Intelligent tyre pressure monitoring</span></span></td>
+      <td class="v">Turns a roadside blowout into a scheduled wheel change — tyre failure is a leading cause of lost paid hours</td>
+    </tr>
+  </tbody>
+
+  <tbody class="driver">
+    <tr class="band"><td colspan="2"><span class="lbl">Driver Working Conditions</span><span class="n">2 FEATURES</span></td></tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip add">ADD</span><span class="nm">65 W USB-C front + rear, wireless phone deck</span></span></td>
+      <td class="v">Two riders, two phones, one shift, no cable hunt between fares</td>
+    </tr>
+    <tr class="row">
+      <td class="c1"><span class="fname"><span class="chip add">ADD</span><span class="nm">Ventilated front seats</span></span></td>
+      <td class="v">A 12-hour shift is the working condition, not a luxury — heat and fatigue show up as unpaid kilometres</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="foot">
+  <b>Pack replacement inside the TCO horizon</b> is the single largest risk to the business case —
+  which is why per-cell SoH telemetry is specified, not optional.
+</p>
+
+</body>
+</html>

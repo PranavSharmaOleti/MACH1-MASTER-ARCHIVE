@@ -1,0 +1,8 @@
+Archive integrity verification (regenerated after final layout)
+Source: /home/sankara/Downloads/MACH1_WORKING_FILES
+Archive: /home/sankara/Downloads/MACH1_WORKING_FILES/MACH1_MASTER_ARCHIVE
+Total archive files catalogued: 121
+Hash-verified against original: 121
+Files without source hash match: 0
+
+Original repo files (excl. archive): 121

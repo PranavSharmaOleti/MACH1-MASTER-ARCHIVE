@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI & Connected Mobility Ecosystem — Requirements & Gap Analysis</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #0F2241;
+    --blue:    #1455A4;
+    --blue-lt: #E8F0FB;
+    --teal:    #0A7C6E;
+    --teal-lt: #E0F5F2;
+    --amber:   #B45309;
+    --amber-lt:#FEF3C7;
+    --red:     #991B1B;
+    --red-lt:  #FEE2E2;
+    --slate:   #475569;
+    --rule:    #CBD5E1;
+    --bg:      #F4F6FA;
+    --white:   #FFFFFF;
+    --text:    #1E293B;
+    --mono:    'IBM Plex Mono', monospace;
+    --sans:    'IBM Plex Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13.5px;
+    line-height: 1.55;
+    padding: 0 0 60px;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--navy);
+    color: #fff;
+    padding: 36px 48px 32px;
+    border-bottom: 3px solid var(--blue);
+  }
+  .masthead-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: #93B4D8;
+    margin-bottom: 10px;
+  }
+  .masthead h1 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    max-width: 680px;
+    margin-bottom: 10px;
+  }
+  .masthead-sub {
+    font-size: 13px;
+    color: #A8BFDA;
+    max-width: 640px;
+  }
+  .masthead-meta {
+    margin-top: 20px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 3px;
+    padding: 4px 12px;
+    font-size: 11.5px;
+    font-family: var(--mono);
+    color: #C5D8EE;
+  }
+
+  /* ── CONTENT WRAPPER ── */
+  .body-wrap { max-width: 1100px; margin: 0 auto; padding: 36px 48px 0; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 44px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--navy);
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--blue);
+    background: var(--blue-lt);
+    border-radius: 2px;
+    padding: 2px 7px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -.01em;
+  }
+
+  /* ── INTRO CALLOUT ── */
+  .callout {
+    background: var(--navy);
+    color: #C5D8EE;
+    border-left: 4px solid var(--blue);
+    padding: 14px 18px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    border-radius: 0 3px 3px 0;
+  }
+  .callout strong { color: #fff; }
+
+  /* ── FRAMEWORK TABLE ── */
+  .fw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    margin-bottom: 8px;
+  }
+  .fw-table thead tr {
+    background: var(--navy);
+    color: #fff;
+  }
+  .fw-table thead th {
+    padding: 9px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-family: var(--mono);
+    letter-spacing: .07em;
+    font-weight: 500;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255,255,255,.12);
+  }
+  .fw-table thead th:last-child { border-right: none; }
+
+  .fw-table tbody td {
+    padding: 10px 12px;
+    vertical-align: top;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.5;
+  }
+  .fw-table tbody td:last-child { border-right: none; }
+  .fw-table tbody tr:last-child td { border-bottom: none; }
+  .fw-table tbody tr:nth-child(even) td { background: #F8FAFC; }
+
+  .col-pillar {
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .col-data { color: #334155; }
+  .col-flow { font-family: var(--mono); font-size: 11.5px; color: #1455A4; }
+  .col-ai   { color: #0F5132; }
+  .col-dec  { color: #7C3A0A; }
+
+  ul.dots { padding-left: 14px; }
+  ul.dots li { margin-bottom: 3px; }
+  ul.dots li::marker { color: var(--blue); }
+
+  .flow-arrow {
+    display: inline-block;
+    font-family: var(--mono);
+    color: var(--blue);
+    font-size: 11px;
+    background: var(--blue-lt);
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin: 1px 0;
+    white-space: nowrap;
+  }
+
+  /* ── GAP TABLE ── */
+  .gap-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    margin-bottom: 8px;
+  }
+  .gap-table thead tr { background: var(--navy); color: #fff; }
+  .gap-table thead th {
+    padding: 9px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-family: var(--mono);
+    letter-spacing: .07em;
+    font-weight: 500;
+    border-right: 1px solid rgba(255,255,255,.12);
+  }
+  .gap-table thead th:last-child { border-right: none; }
+  .gap-table tbody td {
+    padding: 9px 12px;
+    vertical-align: top;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.5;
+  }
+  .gap-table tbody td:last-child { border-right: none; }
+  .gap-table tbody tr:last-child td { border-bottom: none; }
+
+  /* row tints */
+  .row-ok    td { background: #F0FBF7; }
+  .row-partial td { background: #FFFBEB; }
+  .row-gap   td { background: #FFF5F5; }
+  .row-ok    td:first-child { border-left: 3px solid var(--teal); }
+  .row-partial td:first-child { border-left: 3px solid var(--amber); }
+  .row-gap   td:first-child { border-left: 3px solid var(--red); }
+
+  /* status badges */
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+  .badge-yes     { background: var(--teal-lt); color: var(--teal); }
+  .badge-partial { background: var(--amber-lt); color: var(--amber); }
+  .badge-no      { background: var(--red-lt); color: var(--red); }
+
+  /* ── RECOMMENDATIONS ── */
+  .reco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .reco-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--blue);
+    padding: 14px 16px;
+  }
+  .reco-card.warn { border-top-color: var(--amber); }
+  .reco-card.crit { border-top-color: var(--red); }
+  .reco-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .08em;
+    color: var(--slate);
+    margin-bottom: 5px;
+  }
+  .reco-card h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 7px;
+  }
+  .reco-card p { font-size: 12px; color: #334155; line-height: 1.55; }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+    font-size: 11.5px;
+    align-items: center;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+
+  /* ── ARCH DIAGRAM ── */
+  .arch-wrap {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+    margin-bottom: 8px;
+    overflow-x: auto;
+  }
+  .arch-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: .08em;
+    margin-bottom: 16px;
+  }
+  .arch-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 10px;
+    min-width: 640px;
+  }
+  .arch-node {
+    flex: 1;
+    background: var(--blue-lt);
+    border: 1px solid #BFCFE8;
+    padding: 10px 12px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--navy);
+    position: relative;
+    text-align: center;
+  }
+  .arch-node.layer-vehicle { background: #EEF2FF; border-color: #A5B4FC; }
+  .arch-node.layer-edge    { background: #F0FBF7; border-color: #6EE7B7; }
+  .arch-node.layer-cloud   { background: var(--blue-lt); border-color: #93C5FD; }
+  .arch-node.layer-ai      { background: #FDF4FF; border-color: #D8B4FE; }
+  .arch-node.layer-app     { background: #FFFBEB; border-color: #FCD34D; }
+  .arch-node-sub {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--slate);
+    margin-top: 4px;
+    font-family: var(--mono);
+  }
+  .arch-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    color: var(--slate);
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .layer-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--slate);
+    letter-spacing: .06em;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER NOTE ── */
+  .foot-note {
+    background: var(--white);
+    border-top: 1px solid var(--rule);
+    padding: 14px 18px;
+    font-size: 11.5px;
+    color: var(--slate);
+    margin-top: 36px;
+    font-family: var(--mono);
+  }
+
+  @media (max-width: 700px) {
+    .masthead, .body-wrap { padding-left: 18px; padding-right: 18px; }
+    .reco-grid { grid-template-columns: 1fr; }
+    .fw-table, .gap-table { font-size: 11.5px; }
+    .fw-table thead th, .gap-table thead th { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-label">DELIVERABLE ANALYSIS · AI & CONNECTED MOBILITY ECOSYSTEM</div>
+  <h1>Requirements Framework & Gap Analysis<br>for the 2035 EV Platform Proposal</h1>
+  <p class="masthead-sub">Defines what each digital-layer pillar must specify, maps data flows and AI functions, then audits the existing proposal and Suzuki Connect against these requirements.</p>
+  <div class="masthead-meta">
+    <span class="meta-pill">5 Pillars Analyzed</span>
+    <span class="meta-pill">Ola Electric Case · UN R156 · ISO 24089</span>
+    <span class="meta-pill">Status: Gap Analysis</span>
+  </div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- CALLOUT -->
+  <div class="callout" style="margin-top:28px;">
+    <strong>Framing note:</strong> The Ola Electric 2021–22 failure is the baseline for every requirement below — 80,000 complaints/month, sensor faults invisible until breakdown, big-bang software pushes with no rollback, and a rider-facing "black box." A credible proposal must either solve each of those failure modes explicitly, or acknowledge the gap. Generic features without data flows and decision logic are insufficient for a proposal at this level.
+  </div>
+
+  <!-- ─────────────────────────────────────────── -->
+  <!-- SECTION 1: REQUIREMENTS FRAMEWORK          -->
+  <!-- ─────────────────────────────────────────── -->
+  <div class="section-header">
+    <span class="section-num">PART 1</span>
+    <h2>Requirements Framework — What Each Pillar Must Specify</h2>
+  </div>
+
+  <!-- DATA ARCHITECTURE FLOW -->
+  <div class="arch-wrap">
+    <div class="arch-title">SYSTEM DATA FLOW ARCHITECTURE — 5-LAYER REFERENCE</div>
+    <div class="arch-row">
+      <div class="layer-label">VEHICLE</div>
+      <div class="arch-node layer-vehicle">Sensors & CAN-bus<div class="arch-node-sub">BMS · IMU · GPS · Motor current · Fault codes</div></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node layer-vehicle">On-board ECU / TCU<div class="arch-node-sub">Edge pre-processing · OTA slot B</div></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node layer-edge">Edge Gateway<div class="arch-node-sub">4G/LTE compression · local anomaly flag</div></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node layer-cloud">Cloud Ingest<div class="arch-node-sub">Time-series DB · event stream</div></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node layer-ai">AI / Analytics<div class="arch-node-sub">CNN/LSTM · Risk scorer · Digital twin</div></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node layer-app">Apps & Dashboards<div class="arch-node-sub">Fleet ops · Driver · Rider</div></div>
+    </div>
+  </div>
+
+  <!-- ── PILLAR 1: TELEMATICS ── -->
+  <div class="section-header" style="margin-top:30px;">
+    <span class="section-num">PILLAR 1</span>
+    <h2>Telematics & Vehicle Data</h2>
+  </div>
+  <table class="fw-table">
+    <thead>
+      <tr>
+        <th style="width:18%">Sub-domain</th>
+        <th style="width:22%">Data Collected (must specify)</th>
+        <th style="width:18%">Flow Path</th>
+        <th style="width:21%">AI Function</th>
+        <th style="width:21%">Decision / Action Enabled</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-pillar">Battery / Power</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Cell-level voltage & temperature (not pack-average)</li>
+            <li>State-of-Health (SoH) — degradation curve, not binary</li>
+            <li>Charge/discharge C-rate per cycle</li>
+            <li>CNG fuel-pressure & injector status (variant-specific)</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">BMS → TCU</span><br>
+          <span class="flow-arrow">TCU → Cloud @ 1Hz</span><br>
+          <span class="flow-arrow">Cloud → Battery ML model</span>
+        </td>
+        <td class="col-ai">SoH degradation regression; thermal runaway early-warning classifier; capacity-fade forecast</td>
+        <td class="col-dec">Flag cell imbalance before pack failure; schedule battery swap/service proactively; adjust charging limits per vehicle age</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Motion & Powertrain</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>IMU: 3-axis accelerometer + gyroscope at ≥50 Hz</li>
+            <li>Wheel-speed per axle</li>
+            <li>Motor current draw (phase-level)</li>
+            <li>Controller temperature, torque demand vs output</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">CAN-bus → ECU</span><br>
+          <span class="flow-arrow">ECU edge-filter → Cloud</span><br>
+          <span class="flow-arrow">Cloud → CNN/LSTM</span>
+        </td>
+        <td class="col-ai">Vibration-pattern fault classification (motor bearing wear, inverter fault); road-condition inference from IMU</td>
+        <td class="col-dec">97%+ motor/inverter fault classification; route-difficulty scoring for duty-cycle calibration</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Positioning & Connectivity</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>GPS lock-time and positional accuracy (HDOP)</li>
+            <li>Antenna hardware revision (critical: Ola's GPS mismatch was invisible without this)</li>
+            <li>Connectivity uptime, packet-loss rate per vehicle</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">GPS module → TCU</span><br>
+          <span class="flow-arrow">TCU → Cloud metadata</span>
+        </td>
+        <td class="col-ai">Hardware-revision mismatch detector; connectivity-stability score feeds OTA risk model</td>
+        <td class="col-dec">Block OTA push to vehicles with unstable connectivity; detect GPS antenna/firmware mismatch before rider impact</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Software & Firmware State</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Firmware version per ECU/module</li>
+            <li>Hardware revision per component</li>
+            <li>Active fault codes (DTC) + historical fault log</li>
+            <li>OTA slot status (A/B), last update timestamp</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">ECU → Cloud manifest</span><br>
+          <span class="flow-arrow">Cloud → Risk scorer</span>
+        </td>
+        <td class="col-ai">Version/revision matrix compatibility check; fault-history weighting in risk scoring</td>
+        <td class="col-dec">Prevent mismatched firmware reaching riders; auto-rollback to slot A on post-update fault spike</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Usage Patterns</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>km/day, trips/day, idle time</li>
+            <li>Charging windows & session duration</li>
+            <li>Duty cycle intensity (urban stop-go vs highway)</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">ECU → aggregated daily</span><br>
+          <span class="flow-arrow">Cloud → Digital twin</span>
+        </td>
+        <td class="col-ai">Per-vehicle duty-cycle model for fine-tuning failure prediction; charging behavior anomaly detection</td>
+        <td class="col-dec">Customize maintenance intervals per actual usage; detect vehicle misuse or overloading</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── PILLAR 2: FLEET + BATTERY MANAGEMENT ── -->
+  <div class="section-header">
+    <span class="section-num">PILLAR 2</span>
+    <h2>Fleet & Battery Management</h2>
+  </div>
+  <table class="fw-table">
+    <thead>
+      <tr>
+        <th style="width:18%">Sub-domain</th>
+        <th style="width:22%">What Must Be Specified</th>
+        <th style="width:18%">Flow Path</th>
+        <th style="width:21%">AI Function</th>
+        <th style="width:21%">Decision / Action Enabled</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-pillar">OTA Software Rollout</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Risk-scoring model features: hardware revision, sensor calibration age, fault history, connectivity stability</li>
+            <li>Cohort size and expansion gate criteria (not just "staged")</li>
+            <li>A/B partition (slot A / slot B) architecture per vehicle</li>
+            <li>Rollback trigger definition (fault-rate threshold post-update)</li>
+            <li>Compliance: UN R156 SUMS + ISO 24089 audit trail</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">Cloud → Risk scorer</span><br>
+          <span class="flow-arrow">Risk score → Cohort assign</span><br>
+          <span class="flow-arrow">OTA push → Slot B</span><br>
+          <span class="flow-arrow">Validation pass → Activate</span>
+        </td>
+        <td class="col-ai">Risk-score ranking; post-deployment fault-rate monitoring; anomaly triggers rollback signal</td>
+        <td class="col-dec">Zero-downtime update cycle; automatic fleet-wide rollback if fault rate exceeds threshold; audit-ready SUMS log</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Fleet Operator Dashboard</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Multi-vehicle view (500+ vehicles) — not single-vehicle</li>
+            <li>OTA deployment status per vehicle/cohort</li>
+            <li>Active fault summary with severity triage</li>
+            <li>Predicted downtime calendar (when, which vehicles)</li>
+            <li>Battery SoH fleet-wide distribution</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">Cloud DB → Fleet API</span><br>
+          <span class="flow-arrow">Fleet API → Operator UI</span>
+        </td>
+        <td class="col-ai">Fleet-level anomaly ranking; maintenance workload forecasting; route availability prediction</td>
+        <td class="col-dec">Prioritise workshop slots before predicted failures; pull high-risk vehicles before they strand riders</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Battery Lifecycle Management</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Per-cell SoH trajectory over vehicle lifetime</li>
+            <li>Cycle count vs rated cycle life</li>
+            <li>Thermal event history</li>
+            <li>Second-life eligibility threshold (SoH %)</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">BMS → Cloud time-series</span><br>
+          <span class="flow-arrow">Cloud → Degradation model</span>
+        </td>
+        <td class="col-ai">Remaining useful life (RUL) regression; second-life readiness classifier</td>
+        <td class="col-dec">Schedule battery replacement at 70–80% SoH before range anxiety impacts riders; flag second-life candidates for stationary storage</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── PILLAR 3: DRIVER & RIDER APPS ── -->
+  <div class="section-header">
+    <span class="section-num">PILLAR 3</span>
+    <h2>Driver & Rider Apps</h2>
+  </div>
+  <table class="fw-table">
+    <thead>
+      <tr>
+        <th style="width:18%">Sub-domain</th>
+        <th style="width:22%">What Must Be Specified</th>
+        <th style="width:18%">Flow Path</th>
+        <th style="width:21%">AI Function</th>
+        <th style="width:21%">Decision / Action Enabled</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-pillar">Driver Interface — Fault UX</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Plain-language fault triage: exactly three states — "Safe to continue," "Reboot required," "Book service now"</li>
+            <li>No raw DTC codes on primary display</li>
+            <li>Screen-frozen fallback behaviour (audio/haptic)</li>
+            <li>Driver-visible OTA notification before update applies</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">ECU fault → Cloud NLP</span><br>
+          <span class="flow-arrow">NLP → Dash message</span><br>
+          <span class="flow-arrow">Message → Driver CTA</span>
+        </td>
+        <td class="col-ai">DTC-to-plain-language translation model; severity classification (safe/caution/stop)</td>
+        <td class="col-dec">Driver acts within their competence; eliminates "frozen display — no indicator visible" Ola failure mode</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Rider-Facing Data Transparency</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Explicit disclosure: what data is collected, who sees it, retention period</li>
+            <li>No remote vehicle disable without driver confirmation</li>
+            <li>No silent income-pattern or GPS sale to third parties</li>
+            <li>Driver dashboard showing their own data footprint</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">Data policy → In-app</span><br>
+          <span class="flow-arrow">Consent log → Cloud</span>
+        </td>
+        <td class="col-ai">None required — policy and UI design decision, not algorithmic</td>
+        <td class="col-dec">Removes #1 e-rickshaw/EV trust barrier; regulatory data-minimisation compliance (DPDP Act 2023)</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Proactive Driver Notifications</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Predicted maintenance alert (vehicle-specific, timed to off-shift)</li>
+            <li>Charging window recommendation (grid load + SoH-aware)</li>
+            <li>OTA update schedule — when and expected duration</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">AI prediction → Cloud</span><br>
+          <span class="flow-arrow">Cloud → Driver app push</span>
+        </td>
+        <td class="col-ai">Failure prediction output triggers notification; charging optimisation model</td>
+        <td class="col-dec">Driver schedules service voluntarily during downtime, not mid-shift; charging cost optimisation</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── PILLAR 4: SAFETY + PREDICTIVE MAINTENANCE ── -->
+  <div class="section-header">
+    <span class="section-num">PILLAR 4</span>
+    <h2>Safety & Predictive Maintenance</h2>
+  </div>
+  <table class="fw-table">
+    <thead>
+      <tr>
+        <th style="width:18%">Sub-domain</th>
+        <th style="width:22%">What Must Be Specified</th>
+        <th style="width:18%">Flow Path</th>
+        <th style="width:21%">AI Function</th>
+        <th style="width:21%">Decision / Action Enabled</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-pillar">Fault Classification — Motor & Inverter</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Input signals: vibration (IMU), phase current, temperature</li>
+            <li>Model architecture: CNN/LSTM hybrid (not rule-based threshold)</li>
+            <li>Accuracy benchmark: ≥97% classification (cited in proposal)</li>
+            <li>Fault class taxonomy: bearing wear, winding insulation, IGBT fault, overcurrent</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">IMU+current → Edge buffer</span><br>
+          <span class="flow-arrow">Edge → Cloud CNN/LSTM</span><br>
+          <span class="flow-arrow">Output → Fleet alert</span>
+        </td>
+        <td class="col-ai">CNN extracts vibration frequency features; LSTM models temporal degradation progression; ensemble reduces false-positive rate</td>
+        <td class="col-dec">Fault type identified before driver notices symptom; maintenance crew dispatched with correct part, not generic inspection</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Failure Timeline Prediction</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Prediction horizon: days-to-failure (not binary fault/no-fault)</li>
+            <li>Baseline accuracy: ±25 days before per-vehicle fine-tuning; ±12 days after (cited)</li>
+            <li>Fine-tuning trigger: per-vehicle usage pattern deviation</li>
+            <li>100% detection rate for wear-driven failures — quantified from field validation</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">Usage history → Cloud model</span><br>
+          <span class="flow-arrow">Per-vehicle fine-tune</span><br>
+          <span class="flow-arrow">Output → Maintenance calendar</span>
+        </td>
+        <td class="col-ai">RUL regression with per-vehicle fine-tuning; multi-country heterogeneous fleet validation (India included)</td>
+        <td class="col-dec">Failure flagged ~12 days in advance; service scheduled during off-shift; zero unplanned mid-route breakdown</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Digital Twin Validation</td>
+        <td class="col-data">
+          <ul class="dots">
+            <li>Twin scope: motor current, thermal behaviour, vibration profile per vehicle model</li>
+            <li>Used as pre-deployment check for every OTA update</li>
+            <li>Triggered by: sensor anomaly flag, hardware revision change, new firmware version</li>
+          </ul>
+        </td>
+        <td class="col-flow">
+          <span class="flow-arrow">Sensor telemetry → Twin</span><br>
+          <span class="flow-arrow">OTA package → Twin test</span><br>
+          <span class="flow-arrow">Pass/fail → Rollout gate</span>
+        </td>
+        <td class="col-ai">Physics-informed simulation; anomaly deviation detection against expected twin response</td>
+        <td class="col-dec">GPS antenna/firmware mismatch caught in twin before reaching riders; no reactive vehicle-by-vehicle fixes</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── PILLAR 5: AI/DATA LAYER ── -->
+  <div class="section-header">
+    <span class="section-num">PILLAR 5</span>
+    <h2>AI / Data Layer Connecting Everything</h2>
+  </div>
+  <table class="fw-table">
+    <thead>
+      <tr>
+        <th style="width:18%">Component</th>
+        <th style="width:22%">What Must Be Specified</th>
+        <th style="width:18%">Inputs</th>
+        <th style="width:21%">Outputs</th>
+        <th style="width:21%">Connects Which Pillars</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-pillar">Risk-Scoring Engine</td>
+        <td class="col-data">Feature vector: hardware revision, sensor calibration age, fault history count, connectivity uptime %. Scoring frequency, cohort-size logic, expansion gate thresholds</td>
+        <td class="col-flow"><span class="flow-arrow">Telemetry + metadata</span></td>
+        <td class="col-ai">Vehicle risk rank (0–100); cohort assignment; rollout hold flag</td>
+        <td class="col-dec">Telematics → Fleet Management → OTA</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">CNN/LSTM Fault Classifier</td>
+        <td class="col-data">Input signal sampling rate; model update cadence; threshold for escalating from "monitor" to "alert" to "ground vehicle"</td>
+        <td class="col-flow"><span class="flow-arrow">IMU · current · temp</span></td>
+        <td class="col-ai">Fault class + confidence score; days-to-failure estimate</td>
+        <td class="col-dec">Telematics → Safety → Driver App → Fleet Dashboard</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Digital Twin Engine</td>
+        <td class="col-data">Vehicle model variants covered; deviation tolerance before alert; twin update frequency as real-world data accumulates</td>
+        <td class="col-flow"><span class="flow-arrow">Sensor stream + OTA package</span></td>
+        <td class="col-ai">Pass/fail for OTA; deviation anomaly score; validated maintenance schedule</td>
+        <td class="col-dec">Telematics → Safety → Fleet Management → OTA</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">DTC-to-Language NLP</td>
+        <td class="col-data">Fault code taxonomy covered; language/dialect support (Hindi, regional); fallback if connectivity lost</td>
+        <td class="col-flow"><span class="flow-arrow">CAN fault codes</span></td>
+        <td class="col-ai">Three-state driver instruction; service-booking deep link</td>
+        <td class="col-dec">Telematics → Driver App</td>
+      </tr>
+      <tr>
+        <td class="col-pillar">Data Governance Layer</td>
+        <td class="col-data">Retention period per data class; anonymisation before third-party use; driver consent management; DPDP Act 2023 compliance log</td>
+        <td class="col-flow"><span class="flow-arrow">All telemetry streams</span></td>
+        <td class="col-ai">Consent-gated data release; audit trail; anonymised research export</td>
+        <td class="col-dec">All pillars → Regulatory & rider trust</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ─────────────────────────────────────────── -->
+  <!-- SECTION 2: GAP ANALYSIS                    -->
+  <!-- ─────────────────────────────────────────── -->
+  <div class="section-header" style="margin-top:48px;">
+    <span class="section-num">PART 2</span>
+    <h2>Gap Analysis — Proposal vs. Suzuki Connect vs. Requirements</h2>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="badge badge-yes">ADDRESSED</span> Requirement is substantively covered with specifics</div>
+    <div class="legend-item"><span class="badge badge-partial">PARTIAL</span> Mentioned but lacks technical depth or data-flow detail</div>
+    <div class="legend-item"><span class="badge badge-no">GAP</span> Not addressed — must be added before proposal is credible</div>
+  </div>
+
+  <table class="gap-table">
+    <thead>
+      <tr>
+        <th style="width:22%">Requirement</th>
+        <th style="width:12%">Pillar</th>
+        <th style="width:13%">Proposal Doc</th>
+        <th style="width:13%">Suzuki Connect</th>
+        <th style="width:40%">Gap / What Must Be Added</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ADDRESSED -->
+      <tr class="row-ok">
+        <td><strong>Cell-level battery telemetry</strong> (voltage, temp, SoH per cell)</td>
+        <td>Telematics</td>
+        <td><span class="badge badge-yes">ADDRESSED</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Suzuki Connect reports pack-level status only. Proposal correctly specifies cell-level. Needs to add: sampling rate, time-series retention period, and protocol (BMS → CAN → TCU).</td>
+      </tr>
+      <tr class="row-ok">
+        <td><strong>CNN/LSTM fault classification</strong> (motor, inverter)</td>
+        <td>Safety / AI</td>
+        <td><span class="badge badge-yes">ADDRESSED</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Well cited (≥97% accuracy, vibration/current/temp inputs). Missing: fault class taxonomy, false-positive rate target, on-edge vs. cloud inference split, model update cadence.</td>
+      </tr>
+      <tr class="row-ok">
+        <td><strong>A/B partition OTA rollback</strong> (slot A / slot B)</td>
+        <td>Fleet Mgmt</td>
+        <td><span class="badge badge-yes">ADDRESSED</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Proposal correctly cites this as the fix for "scooter won't turn on after update." Needs: rollback trigger definition (which fault-rate threshold activates it) and who authorises manual rollback for fleet ops.</td>
+      </tr>
+      <tr class="row-ok">
+        <td><strong>Failure prediction timeline</strong> (days-to-failure, field-validated)</td>
+        <td>Safety</td>
+        <td><span class="badge badge-yes">ADDRESSED</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Quantified well (±25d → ±12d post fine-tuning; 100% wear-failure detection). Missing: what happens when prediction confidence is low — escalation path and human review workflow.</td>
+      </tr>
+      <tr class="row-ok">
+        <td><strong>No remote kill-switch / transparent data use</strong> (rider trust)</td>
+        <td>Rider App</td>
+        <td><span class="badge badge-yes">ADDRESSED</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Correctly identifies BMS remote-disable as the #1 trust barrier. Needs to reference DPDP Act 2023 compliance specifically, and name what data is <em>not</em> collected (income patterns, route monetisation).</td>
+      </tr>
+      <tr class="row-ok">
+        <td><strong>Risk-scored staged OTA rollout</strong></td>
+        <td>Fleet Mgmt</td>
+        <td><span class="badge badge-yes">ADDRESSED</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Feature vector listed (HW revision, calibration age, fault history, connectivity). Missing: cohort expansion gate criteria — what metric/threshold unlocks the next cohort? Who approves expansion?</td>
+      </tr>
+      <tr class="row-ok">
+        <td><strong>Digital twin pre-deployment validation</strong></td>
+        <td>Safety / AI</td>
+        <td><span class="badge badge-yes">ADDRESSED</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Twin scope specified (motor current, thermal, vibration). Needs: which vehicle model variants have twins on day one, twin update latency as real data accumulates, and deviation tolerance threshold.</td>
+      </tr>
+
+      <!-- PARTIAL -->
+      <tr class="row-partial">
+        <td><strong>GPS hardware revision tracking</strong> (antenna/firmware mismatch detection)</td>
+        <td>Telematics</td>
+        <td><span class="badge badge-partial">PARTIAL</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>The Ola GPS mismatch story is cited, but the <em>mechanism</em> to prevent it is not fully specified. Must add: hardware revision logged per component per vehicle in the fleet manifest, with automatic compatibility matrix check on every OTA push. The risk scorer must explicitly include GPS antenna HW revision as a feature.</td>
+      </tr>
+      <tr class="row-partial">
+        <td><strong>Driver plain-language fault UX</strong> ("safe / reboot / service")</td>
+        <td>Driver App</td>
+        <td><span class="badge badge-partial">PARTIAL</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Three states named. Missing: (1) what happens when display itself is frozen — audio/haptic fallback; (2) whether translation happens on-edge (offline capable) or requires connectivity; (3) regional language support (Hindi minimum for Indian fleet).</td>
+      </tr>
+      <tr class="row-partial">
+        <td><strong>Fleet operator dashboard</strong> (multi-vehicle, not single-owner)</td>
+        <td>Fleet Mgmt</td>
+        <td><span class="badge badge-partial">PARTIAL</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Explicitly flagged as absent from Suzuki Connect. Proposal acknowledges fleet-op context but does not describe the dashboard. Must add: key views (OTA deployment status, fault triage, predicted downtime calendar, battery SoH distribution), role-based access (fleet owner vs. mechanic vs. driver), alert routing.</td>
+      </tr>
+      <tr class="row-partial">
+        <td><strong>UN R156 SUMS + ISO 24089 compliance</strong></td>
+        <td>Fleet Mgmt / AI</td>
+        <td><span class="badge badge-partial">PARTIAL</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Both standards are cited correctly. Not yet specified: what the SUMS audit trail contains (update manifest, vehicle list, rollout timestamp, rollback events), who the nominated SUMS responsible person is, how the ISO 24089 engineering evidence package is generated from the platform.</td>
+      </tr>
+      <tr class="row-partial">
+        <td><strong>Continuous telemetry pipeline architecture</strong></td>
+        <td>Telematics / AI</td>
+        <td><span class="badge badge-partial">PARTIAL</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Data classes listed correctly. Missing infrastructure detail: streaming protocol (MQTT / AMQP), time-series database choice, data compression at edge (critical for rural connectivity), and what happens when vehicle is offline — local buffer duration and sync behaviour.</td>
+      </tr>
+      <tr class="row-partial">
+        <td><strong>CNG variant sensor coverage</strong></td>
+        <td>Telematics</td>
+        <td><span class="badge badge-partial">PARTIAL</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Mentioned as "fuel-system sensors for CNG variants" but not elaborated. Needs: which specific CNG sensors (pressure, temperature, injector duty cycle), whether the same CNN/LSTM models apply or CNG requires separate classifiers, and how the AI layer handles dual-fuel variants.</td>
+      </tr>
+
+      <!-- GAPS -->
+      <tr class="row-gap">
+        <td><strong>Battery second-life / RUL management</strong></td>
+        <td>Fleet Mgmt</td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Not addressed anywhere in the proposal. For a 2035 vehicle, battery lifecycle economics are a major differentiator. Must add: SoH threshold for replacement vs. second-life routing, RUL regression model, integration with battery recycling/swap partners, and how this data is surfaced to fleet operators.</td>
+      </tr>
+      <tr class="row-gap">
+        <td><strong>Data governance / DPDP Act 2023 compliance</strong></td>
+        <td>Rider App / AI</td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Rider data trust is discussed but Indian regulatory compliance is not named. Must add: data retention periods per class, consent collection mechanism, right-to-erasure workflow, and what is excluded from third-party data sharing. Critical for commercial fleet operators operating under DPDP Act 2023.</td>
+      </tr>
+      <tr class="row-gap">
+        <td><strong>Offline / degraded-connectivity fail-safes</strong></td>
+        <td>Telematics / Safety</td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Indian rural and peri-urban routes have intermittent 4G. The proposal assumes connectivity for AI inference but doesn't specify: local edge inference capability for fault detection when offline, data buffer size/duration, prioritisation of what syncs first when connectivity restores.</td>
+      </tr>
+      <tr class="row-gap">
+        <td><strong>Charging infrastructure integration</strong></td>
+        <td>Fleet Mgmt / Driver App</td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>No mention of integration with public/fleet charging networks. For EV fleet deployment, the platform should surface: nearest compatible charger, real-time charger availability, smart charging scheduling (off-peak grid load), and charging session data back into the BMS telemetry loop.</td>
+      </tr>
+      <tr class="row-gap">
+        <td><strong>Maintenance workflow integration</strong> (workshop, parts, scheduling)</td>
+        <td>Fleet Mgmt / Safety</td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Predictive maintenance outputs a "fault in 12 days" signal — but what happens next is unspecified. Must add: how the fleet dashboard connects to workshop scheduling, spare-parts inventory pre-positioning, and technician mobile interface showing which fault class to expect before the vehicle arrives.</td>
+      </tr>
+      <tr class="row-gap">
+        <td><strong>Model drift monitoring & retraining pipeline</strong></td>
+        <td>AI Layer</td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td><span class="badge badge-no">GAP</span></td>
+        <td>Proposal cites accuracy benchmarks at training time, but doesn't address what happens as the fleet ages and data distribution shifts. Must add: model performance monitoring in production, drift detection trigger, retraining cadence, and whether fine-tuned per-vehicle models are retrained continuously or in batches.</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ─────────────────────────────────────────── -->
+  <!-- SECTION 3: RECOMMENDATIONS                 -->
+  <!-- ─────────────────────────────────────────── -->
+  <div class="section-header" style="margin-top:48px;">
+    <span class="section-num">PART 3</span>
+    <h2>Priority Additions for Proposal Readiness</h2>
+  </div>
+
+  <p style="font-size:12.5px; color:var(--slate); margin-bottom:16px;">Items are grouped by urgency. Red = proposal is not credible without it. Amber = gaps a sophisticated evaluator will probe. Blue = differentiators that strengthen the proposal.</p>
+
+  <div class="reco-grid">
+
+    <div class="reco-card crit">
+      <div class="reco-label">CRITICAL · FLEET MGMT</div>
+      <h4>Define Fleet Operator Dashboard Screens</h4>
+      <p>The proposal has no fleet-ops UI specification. Add: OTA cohort status view, fault severity heat-map across 500+ vehicles, predicted downtime calendar, and SoH distribution chart. Without this, the platform is indistinguishable from Suzuki Connect's single-owner model.</p>
+    </div>
+
+    <div class="reco-card crit">
+      <div class="reco-label">CRITICAL · REGULATORY</div>
+      <h4>SUMS Audit Trail & DPDP Act 2023 Compliance</h4>
+      <p>Cite UN R156 and ISO 24089 but then show what the audit log contains: update manifest, vehicle ID, rollout timestamp, rollback events, and sign-off chain. Add a data governance matrix specifying retention, consent, and third-party exclusions under India's DPDP Act 2023.</p>
+    </div>
+
+    <div class="reco-card crit">
+      <div class="reco-label">CRITICAL · TELEMATICS</div>
+      <h4>GPS Hardware Revision — Explicit Mismatch Prevention</h4>
+      <p>The Ola GPS story is the opening case study, but the solution mechanism is underspecified. Add: hardware revision logged per component in the fleet manifest; OTA compatibility matrix check blocks push if antenna HW revision is incompatible with new firmware. Name this as a specific risk-scorer feature.</p>
+    </div>
+
+    <div class="reco-card crit">
+      <div class="reco-label">CRITICAL · SAFETY</div>
+      <h4>Offline Edge Inference Capability</h4>
+      <p>Indian fleet routes include rural and low-connectivity corridors. Specify: which fault classifiers run on-edge without cloud connectivity, local data buffer duration (minimum 72h recommended), and sync priority queue when connectivity restores. A cloud-only AI layer is a single point of failure for this market.</p>
+    </div>
+
+    <div class="reco-card warn">
+      <div class="reco-label">IMPORTANT · FLEET MGMT</div>
+      <h4>OTA Cohort Gate Criteria (not just "staged")</h4>
+      <p>The proposal says cohorts are staged but never defines the expansion gate. Add: the specific metric (fault-rate per 1,000 km, rollback events per cohort), the threshold that unlocks the next cohort, the waiting period, and who approves expansion — automated or human sign-off.</p>
+    </div>
+
+    <div class="reco-card warn">
+      <div class="reco-label">IMPORTANT · DRIVER APP</div>
+      <h4>Driver UX Offline Fallback & Language Support</h4>
+      <p>Plain-language fault messages must work when connectivity is lost. Specify: local DTC-to-language lookup table on-device, audio/haptic alert if display is frozen (closing Ola's frozen-screen failure mode), and minimum regional language support (Hindi + Bengali/Tamil/Telugu for initial fleet regions).</p>
+    </div>
+
+    <div class="reco-card warn">
+      <div class="reco-label">IMPORTANT · FLEET MGMT</div>
+      <h4>Maintenance Workflow Integration</h4>
+      <p>A "12-day fault prediction" is only valuable if it triggers a workshop booking. Add: fleet dashboard → workshop scheduling integration, spare-parts pre-positioning signal from fault class output, and technician mobile view showing expected fault type before vehicle arrives.</p>
+    </div>
+
+    <div class="reco-card warn">
+      <div class="reco-label">IMPORTANT · FLEET MGMT</div>
+      <h4>Battery Second-Life & RUL Management</h4>
+      <p>A 2035 vehicle proposal with no battery lifecycle economics is incomplete. Add SoH replacement threshold (commonly 70–80%), RUL regression output to fleet dashboard, and how expired batteries are flagged for second-life (stationary storage) vs. recycling. This is a cost and sustainability differentiator.</p>
+    </div>
+
+    <div class="reco-card">
+      <div class="reco-label">DIFFERENTIATOR · AI LAYER</div>
+      <h4>Model Drift Monitoring & Retraining Pipeline</h4>
+      <p>Benchmarks cited (97% accuracy, ±12d prediction) are training-time metrics. Add: production performance monitoring cadence, drift detection trigger (e.g., false-positive rate rising >5%), retraining pipeline (batch vs. continuous), and whether per-vehicle fine-tuned models update automatically or require fleet-ops approval.</p>
+    </div>
+
+    <div class="reco-card">
+      <div class="reco-label">DIFFERENTIATOR · FLEET MGMT</div>
+      <h4>Charging Infrastructure Integration</h4>
+      <p>Bind the AI layer to the charging network: nearest compatible charger, real-time availability, smart charging schedule (off-peak + SoH-aware charge rate), and charging session data looped back into the BMS telemetry. This closes the energy management loop and is a strong fleet-operator selling point.</p>
+    </div>
+
+    <div class="reco-card">
+      <div class="reco-label">DIFFERENTIATOR · TELEMATICS</div>
+      <h4>CNG Variant Sensor Specification</h4>
+      <p>Clarify which CNG sensors are in scope (pressure, temp, injector duty cycle), whether CNN/LSTM models are shared with EV variants or require separate training data, and how dual-fuel variant telemetry is handled. A single vague line on "fuel-system sensors" is insufficient for a proposal covering India's mixed fleet reality.</p>
+    </div>
+
+    <div class="reco-card">
+      <div class="reco-label">DIFFERENTIATOR · AI LAYER</div>
+      <h4>Telemetry Pipeline Infrastructure</h4>
+      <p>Name the streaming protocol (MQTT preferred for low-bandwidth IoT), time-series database, edge compression ratio target, and what happens during extended offline periods. This transforms the data layer from a concept into a buildable architecture that procurement and engineering teams can evaluate.</p>
+    </div>
+
+  </div>
+
+</div><!-- /body-wrap -->
+
+<div class="foot-note" style="max-width:1100px; margin:36px auto 0;">
+  SOURCES: Ola Electric 2021–22 field data · UN Regulation No. 156 (SUMS) · ISO 24089 · India DPDP Act 2023 · Field validation pipeline — 3-country heterogeneous fleet (2026) · Suzuki Connect product specification (Arena/NEXA TCU layer) · CNN/LSTM motor fault classification industry benchmarks
+</div>
+
+</body>
+</html>
