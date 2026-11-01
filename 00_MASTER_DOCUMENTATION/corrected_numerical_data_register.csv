@@ -1,0 +1,9 @@
+Provenance ID,Slide,Context,Data point / claim,Value as displayed,Unit,Original source file,Source location,Original source value,Conversion / rounding / calculation,Formula / methodology,Contributing sources,Verification status,Notes
+MCH-N-006,3,MARKET,Intra-city street hail — EV share,10%,share,Deck slide 3 table,Slide 3,10,None,Stated,Deck,Unverified,Table flagged withdrawn by MARKET_ASSESSMENT.pdf. EV share corrected 18%→10%; growth 18% unchanged.
+MCH-N-008,3,MARKET,Airport — EV share,18%,share,Deck slide 3 table,Slide 3,18,None,Stated,Deck,Unverified,Withdrawn table. EV share corrected 26%→18%; growth 26% unchanged.
+MCH-N-005,2,THESIS,Pack reserve at year 8,10%,reserve,Deck slide 2,Slide 2,0.10,None,Stated,Deck,Discrepancy,Conflicts with 3% top/bottom (slide 5) and 15% reserve (slide 11).
+MCH-N-027,5,POWERTRAIN,Usable energy 10–90% SOC,36,kWh,Deck slide 5 '10–90% - 36 kWh usable',Slide 5,36,45×0.80,Calculation,Deck,Discrepancy,36 kWh = 80% of 45; conflicts with '3% top and bottom reserve' (94%) and 90% usable convention.
+MCH-N-032,5,POWERTRAIN,EFC wall/nominal (cited ~198),197.8,/yr,figures.txt §K,figures.txt:76,197.8,(12.84/0.90)/100×62400/45,Calculation,tco_engine,Discrepancy,Reproduced; overstates nominal by 11.1% (mixes wall energy with nominal capacity).
+MCH-N-092,7,TCO,Negative cells (48-cell model),1 of 48,count,Deck slide 10 / figures.txt §M,figures.txt:94,1,None,Output,tco_engine,Discrepancy,Bengaluru 5-yr cash −0.4% (pre road-tax fix; current model differs).
+MCH-N-004,2,THESIS,GST saving sub-4m vehicle,₹1.5L,saving,Deck slide 2,Slide 2,1.5 lakh,None,Stated,Deck,Discrepancy,Tax treatment claim. EV GST is 5% regardless of length — internal contradiction (I-001).
+MCH-N-013,3,MARKET,Airport driver ₹/mo,"93,600",₹/month,Deck slide 3 right table,Slide 3,93600,None,Stated,Deck,Unverified,"Withdrawn table basis. 93,600 coincidentally equals 5-yr EV maintenance (figures.txt line 6); different quantity."

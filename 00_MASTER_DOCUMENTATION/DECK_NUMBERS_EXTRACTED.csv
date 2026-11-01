@@ -1,0 +1,482 @@
+Slide,Location on slide,Text as displayed,Value,Unit,Type (stated/calculated/quoted external)
+1,Cover,Image-only cover; no extractable text,—,—,stated
+2,THE FINDING,95 km/day unpredictable hail,95,km/day,stated
+2,THE FINDING,210 km/day pre-booked depot returns,210,km/day,stated
+2,THE BUYER,₹67/day flat fee,67,₹/day,stated
+2,THE DESIGN,sub-4-metre keeps GST at 5%,5,%,stated
+2,THE DESIGN,saves ₹1.5L,1.5,Lakh ₹,stated
+2,THE DESIGN,BEV on LFP: at 200 km/day,200,km/day,stated
+2,THE DESIGN,45 kWh: sized for duty cycle,45,kWh,stated
+2,THE DESIGN,10% reserve at year 8,10,%,stated
+3,Table 1 (use-case),Intra-city street hail — AVG KM,12.7,km,stated
+3,Table 1,Intra-city — KM/DAY,95,km/day,stated
+3,Table 1,Intra-city — TRIPS/DAY,7.5,trips/day,stated
+3,Table 1,Intra-city — ₹/TRIP,350,₹/trip,stated
+3,Table 1,Intra-city — GROWTH,18,%,stated
+3,Table 1,Intra-city — EV SHARE,10,%,stated
+3,Table 1,Intra-city — PRICE SENS.,0.85,index,stated
+3,Table 1,Daily commute — AVG KM,22.0,km,stated
+3,Table 1,Daily commute — KM/DAY,176,km/day,stated
+3,Table 1,Daily commute — TRIPS/DAY,8.0,trips/day,stated
+3,Table 1,Daily commute — ₹/TRIP,550,₹/trip,stated
+3,Table 1,Daily commute — GROWTH,24,%,stated
+3,Table 1,Daily commute — EV SHARE,12,%,stated
+3,Table 1,Daily commute — PRICE SENS.,0.90,index,stated
+3,Table 1,Airport transfer — AVG KM,35.0,km,stated
+3,Table 1,Airport transfer — KM/DAY,210,km/day,stated
+3,Table 1,Airport transfer — TRIPS/DAY,6.0,trips/day,stated
+3,Table 1,Airport transfer — ₹/TRIP,600,₹/trip,stated
+3,Table 1,Airport transfer — GROWTH,26,%,stated
+3,Table 1,Airport transfer — EV SHARE,18,%,stated
+3,Table 1,Airport transfer — PRICE SENS.,0.35,index,stated
+3,Table 1,Inter-city — AVG KM,280,km,stated
+3,Table 1,Inter-city — KM/DAY,340,km/day,stated
+3,Table 1,Inter-city — TRIPS/DAY,1.5,trips/day,stated
+3,Table 1,Inter-city — ₹/TRIP,"4,200",₹/trip,stated
+3,Table 1,Inter-city — GROWTH,20,%,stated
+3,Table 1,Inter-city — EV SHARE,5,%,stated
+3,Table 1,Inter-city — PRICE SENS.,0.40,index,stated
+3,Table 1,Premium — AVG KM,18.0,km,stated
+3,Table 1,Premium — KM/DAY,144,km/day,stated
+3,Table 1,Premium — TRIPS/DAY,8.0,trips/day,stated
+3,Table 1,Premium — ₹/TRIP,520,₹/trip,stated
+3,Table 1,Premium — GROWTH,28,%,stated
+3,Table 1,Premium — EV SHARE,15,%,stated
+3,Table 1,Premium — PRICE SENS.,0.30,index,stated
+3,Table 2 (pitch),Intra-city — KM/DAY,95,km/day,stated
+3,Table 2,Intra-city — GROWTH,18,%,stated
+3,Table 2,Intra-city — EV SHARE,10,%,stated
+3,Table 2,Intra-city — DRIVER ₹/MO,"68,250",₹/month,stated
+3,Table 2,Intra-city — FIT,weak,—,stated
+3,Table 2,Premium — KM/DAY,144,km/day,stated
+3,Table 2,Premium — GROWTH,28,%,stated
+3,Table 2,Premium — EV SHARE,15,%,stated
+3,Table 2,Premium — DRIVER ₹/MO,"1,08,160",₹/month,stated
+3,Table 2,Premium — FIT,moderate,—,stated
+3,Table 2,Commute — KM/DAY,176,km/day,stated
+3,Table 2,Commute — GROWTH,24,%,stated
+3,Table 2,Commute — EV SHARE,12,%,stated
+3,Table 2,Commute — DRIVER ₹/MO,"1,14,400",₹/month,stated
+3,Table 2,Commute — FIT,STRONG,—,stated
+3,Table 2,Airport — KM/DAY,210,km/day,stated
+3,Table 2,Airport — GROWTH,26,%,stated
+3,Table 2,Airport — EV SHARE,18,%,stated
+3,Table 2,Airport — DRIVER ₹/MO,"93,600",₹/month,stated
+3,Table 2,Airport — FIT,STRONG,—,stated
+3,Table 2,Intercity — KM/DAY,340,km/day,stated
+3,Table 2,Intercity — GROWTH,20,%,stated
+3,Table 2,Intercity — EV SHARE,5,%,stated
+3,Table 2,Intercity — DRIVER ₹/MO,"1,63,800",₹/month,stated
+3,Table 2,Intercity — FIT,weak,—,stated
+3,Narrative,61% of market,61,%,stated
+3,Narrative,95 KM/DAY,95,km/day,stated
+3,Narrative,560 km driven per round trip for 280 km revenue,560,km,stated
+3,Narrative,280 km revenue,280,km,stated
+3,Narrative,19.14% CAGR,19.14,%,stated
+3,Narrative,EVERA expanded at Delhi terminals,—,—,quoted external
+3,Narrative,GMR Hyderabad 200+ vehicle premium airport fleet,200+,vehicles,quoted external
+3,Narrative,Bharat Taxi Navi Mumbai,—,—,quoted external
+3,Narrative,"BluSmart assumed 10%, realised 26%",10/26,%,quoted external
+3,Narrative,CAPEX structure ~8 points of EV advantage,8,points,stated
+3,Narrative,315 km against 200 km/day duty,315,km,stated
+3,Narrative,200 km/day duty,200,km/day,stated
+3,Narrative,EV share already 18%,18,%,stated
+3,Narrative,Airport transfers fastest-growing 19.14% CAGR,19.14,%,stated
+3,Narrative,Uber Black top two use cases airport + corporate,—,—,quoted external
+3,Narrative,Lowest EV share: 5%,5,%,stated
+3,Narrative,Highest price sensitivity,—,—,stated
+3,Dendrogram,Cluster A — Airport + Corporate-commute,—,—,stated
+4,Spec table,"45 kWh LFP pack, semi-structural CTP",45,kWh,stated
+4,Spec table,200 km/day duty with 10% reserve at year 8,200/10,km/day/%,stated
+4,Spec table,"PMSM 80 bhp, single-speed reduction drive",80,bhp,stated
+4,Spec table,"62,400 km/yr","62,400",km/yr,stated
+4,Spec table,"Liquid-plate cooling, 48 °C cell design point",48,°C,stated
+4,Spec table,"L2 ADAS, six airbags",6,airbags,stated
+4,Spec table,360° HD camera,360,°,stated
+4,Spec table,10+ paid hours a day,10+,hours/day,stated
+4,Spec table,65 W USB-C,65,W,stated
+4,Spec table,12-hour shift,12,hours,stated
+4,Param table,Body Style: Compact Sedan,—,—,stated
+4,Param table,Segment: B-segment,—,—,stated
+4,Param table,"Length 3,995 mm","3,995",mm,stated
+4,Param table,"Width 1,684 mm","1,684",mm,stated
+4,Param table,"Height 1,532 mm","1,532",mm,stated
+4,Param table,"Wheelbase 2,450 mm","2,450",mm,stated
+4,Param table,"Seating 5-seat, 2-row",5,seats,stated
+4,Param table,Boot Space 400 L,400,L,stated
+4,Param table,Powertrain 45 kWh BEV,45,kWh,stated
+4,Param table,Fleet Pricing ~₹14 L,14,Lakh ₹,stated
+4,Narrative,"Dzire Tour S: 5,000 units/month","5,000",units/month,quoted external
+4,Narrative,40% of all Dzire sales,40,%,quoted external
+4,Narrative,40% of all Dzire units go to fleet buyers,40,%,quoted external
+4,Narrative,"5,000 units/month at steady state","5,000",units/month,quoted external
+4,Narrative,"Maruti 3,614-outlet service network","3,614",outlets,quoted external
+4,Narrative,"sub-4-metre keeps GST at 5%, saves ₹1.5L",5/1.5,%/Lakh,stated
+4,Dimension drawing,"3,995 × 1,684 × 1,532 × 2,450 mm",3995/1684/1532/2450,mm,stated
+5,Specs table,80 bhp continuous / 100 bhp peak,80/100,bhp,stated
+5,Specs table,"93–97% peak motor efficiency, –2% at 45°C",93-97/-2,%,stated
+5,Specs table,LFP 45 kWh structural pack,45,kWh,stated
+5,Specs table,10–90% — 36 kWh usable,10-90/36,%/kWh,stated
+5,Specs table,3% top and bottom reserved,3,%,stated
+5,Specs table,263 km claimed,263,km,stated
+5,Specs table,200 km @ 75% DoD,200/75,km/%,stated
+5,Specs table,–25.7 kWh @ 200 km/day,25.7,kWh,stated
+5,Specs table,–20–35% with AC load at 45°C,20-35,%,stated
+5,Specs table,Active liquid cooling 45°-50°C,45-50,°C,stated
+5,Specs table,"1C max, 45 kW DC fast charge",1/45,C/kW,stated
+5,Specs table,"11 kW AC, 3-phase, 23 hr overnight window",11/23,kW/hr,stated
+5,Specs table,"200,000+ km, –3.2 yr at 62,400 km/yr",200000/3.2/62400,km/yr/km/yr,stated
+5,Specs table,"14' alloy, 175/65 R14",14/175/65,in/mm,stated
+5,Specs table,170 mm ground clearance,170,mm,stated
+5,Specs table,"AIS-156, AIS-038 Rev.2, ECE R100",—,—,stated
+5,Specs table,"5-seat, 2row, rear-biased, flat floor",5/2,seats/row,stated
+5,Specs table,upto 400 L luggage,400,L,stated
+5,Specs table,15 yr cycle-life basis,15,yr,stated
+5,Specs table,"Compact Sedan, B-segment",—,—,stated
+5,Specs table,"3,995 × 1,684 × 1,532 × 2,450 mm",3995/1684/1532/2450,mm,stated
+5,Comparison table,BEV cost/km ₹6.42,6.42,₹/km,stated
+5,Comparison table,HEV ₹9–11,9-11,₹/km,stated
+5,Comparison table,PHEV ₹8–10,8-10,₹/km,stated
+5,Comparison table,CNG ₹7.42–8.34,7.42-8.34,₹/km,stated
+5,Comparison table,Bio-CNG ≈ CNG + supply risk,—,—,stated
+5,Comparison table,BEV range 315 km real,315,km,stated
+5,Comparison table,CNG ~500–600 km real,500-600,km,stated
+5,Comparison table,Bio-CNG ~500–600 km real,500-600,km,stated
+5,Comparison table,"35,000 public charging ports for 5.7 million EVs",35000/5700000,ports/EVs,quoted external
+5,Comparison table,160 EVs per port,160,EVs/port,quoted external
+5,Comparison table,207 CBG plants commissioned,207,plants,quoted external
+5,Comparison table,"government target 5,000 by 2030",5000,plants,quoted external
+5,Comparison table,Only 17 of 207 pipeline-connected,17/207,plants,quoted external
+5,Comparison table,Commissioned capacity ~2 MMTPA vs 15 MMTPA target,2/15,MMTPA,quoted external
+5,Comparison table,Operating plants 20–60% of rated capacity,20-60,%,quoted external
+5,Comparison table,"Mandatory blending 1% FY2025-26, rising to 5% FY2028-29",1/5,%,quoted external
+5,Comparison table,HEV/PHEV GST 43%,43,%,quoted external
+5,Charging readiness,36 kWh recharge (10–90%) takes 4.9 h at 7.4 kW or 3.3 h at 11 kW,4.9/3.3,hours,calculated
+5,Charging readiness,Depot electricity ₹5.50–9/kWh,5.50-9,₹/kWh,stated
+5,Charging readiness,Public fast charging ₹18–24/kWh,18-24,₹/kWh,stated
+5,Charging readiness,Smart off-peak scheduling cuts charging costs 20–35%,20-35,%,stated
+5,Charging readiness,Feasible 1:3 charger-to-vehicle ratio,1:3,ratio,stated
+5,Pack sizing headroom,MACH1 (EV) fits overnight,—,—,stated
+5,Pack sizing,200 km/day: 34 kWh → 45 kWh,34/45,kWh,stated
+5,Pack sizing,263 km/day: 45 kWh,45,kWh,stated
+5,Pack sizing,300 km/day: 51 kWh → 45 kWh,51/45,kWh,stated
+5,Pack sizing,7.4 kW AC: 4.9 h,4.9,h,calculated
+5,Pack sizing,11 kW AC: 3.3 h,3.3,h,calculated
+5,Pack sizing,22 kW AC: 1.6 h,1.6,h,calculated
+5,Pack sizing,36 kWh (10→90%) window,36,kWh,stated
+5,Pack sizing,45 kWh @ 48°C cell,45/48,kWh/°C,stated
+5,Pack sizing,77.3% SoH at year 8,77.3,%,stated
+5,Pack sizing,44.2 kWh usable,44.2,kWh,stated
+5,Pack sizing,48°C max under liquid cooling,48,°C,stated
+5,Pack sizing,"263 KM/DAY, 45 kWh",263/45,km/kWh,stated
+5,Pack sizing,"300 KM/DAY, 51 kWh → 45 kWh",300/51/45,km/kWh,stated
+5,Without depot charging,₹18–24 /kWh,18-24,₹/kWh,quoted external
+5,Without depot charging,₹5.50–9 /kWh,5.50-9,₹/kWh,stated
+5,Without depot charging,₹3–5 /kWh,3-5,₹/kWh,stated
+5,Without depot charging,₹5.49 lakh capital premium,5.49,Lakh ₹,stated
+5,Without depot charging,"200,000+ km, 3.2 yr",200000/3.2,km/yr,stated
+5,Without depot charging,120–200 km/day fleet parity,120-200,km/day,quoted external
+5,Without depot charging,18–24-month payback,18-24,months,quoted external
+5,Without depot charging,200 km/day duty cycle,200,km/day,stated
+5,Without depot charging,20–35% charging cost cut,20-35,%,stated
+5,Without depot charging,1:3 charger-to-vehicle ratio,1:3,ratio,stated
+5,Without depot charging,"207 CBG plants, target 5,000 by 2030",207/5000,plants,quoted external
+5,Without depot charging,17 of 207 pipeline-connected,17/207,plants,quoted external
+5,Without depot charging,~2 MMTPA vs 15 MMTPA,2/15,MMTPA,quoted external
+5,Without depot charging,20–60% of rated capacity,20-60,%,quoted external
+5,Without depot charging,"1% blending FY2025-26, 5% FY2028-29",1/5,%,quoted external
+5,Without depot charging,43% GST+cess on HEV/PHEV,43,%,quoted external
+5,Without depot charging,Green SM Noida quote: ~2.5 h/day lost,2.5,h/day,quoted external
+5,Without depot charging,Green SM launched ~2.5 months before,2.5,months,quoted external
+6,Timeline,May 2025 — JNCASR fast-charging sodium-ion,May 2025,date,quoted external
+6,Timeline,charged to 80% in six minutes,80/6,%/min,quoted external
+6,Timeline,"more than 3,000 charge cycles",3000+,cycles,quoted external
+6,Timeline,Dec 2025 — ARCI + Voltasun 80 pouch cells at 5 Ah,80/5,cells/Ah,quoted external
+6,Timeline,15 December 2025 agreement date,15 Dec 2025,date,quoted external
+6,Timeline,Dec 2025 — TDB + NOPO nanotechnologies SWCNT,Dec 2025,date,quoted external
+6,Timeline,April 2026 — TDB financial assistance,Apr 2026,date,quoted external
+6,Timeline,9th September 2026 — NTPC EOI,9 Sep 2026,date,quoted external
+6,Timeline,2032–33 adoption decision,2032-33,date,stated
+6,Timeline,2036–38 second phase,2036-38,date,stated
+6,Funding,"PLI scheme outlay ₹18,100 crore",18100,Crore ₹,quoted external
+6,Funding,"Critical Mineral Mission ₹16,300 crore",16300,Crore ₹,quoted external
+6,Funding,"₹18,000 crore from PSU stakeholders",18000,Crore ₹,quoted external
+6,Funding,7 years mission duration,7,years,quoted external
+6,Funding,CEA storage requirement ~411 GWh by 2031-32,411,GWh,quoted external
+6,Funding,December 2025 parliamentary response,Dec 2025,date,quoted external
+6,Certification,"AIS-038 Rev.2 Amendment 3, Annex IX-K(2)",—,—,quoted external
+6,Certification,IS 16893 Part 2 & 3,—,—,quoted external
+6,Certification,CMV Rule 126,—,—,quoted external
+6,Certification,No sodium-ion cell ever certified,0,count,quoted external
+6,Architecture,Detachable semi-structural CTP vs full structural CTC,—,—,stated
+6,Architecture,Cost of optionality ₹2–3 Cr / 4–6 months vs ₹15–25 Cr / 18–24 months,2-3/4-6 vs 15-25/18-24,Cr/months,stated
+6,Architecture,AIS-038 Clause 2.48 retest,—,—,quoted external
+6,Architecture,"Cell standardisation 256×106×32 prismatic, 102–108s",256x106x32/102-108,mm/s,stated
+6,Architecture,44.2 kWh @ 48°C cell,44.2/48,kWh/°C,stated
+6,Architecture,77.3% SoH at year 8,77.3,%,stated
+6,Architecture,48°C max under liquid cooling,48,°C,stated
+6,Scale,Current automotive deployments 23–25 kWh microcars,23-25,kWh,quoted external
+6,Scale,CATL Naxtra GWh-scale capacity,—,—,quoted external
+6,Scale,Prussian White chemistry,—,—,quoted external
+6,Policy,India's EV supply chain lithium-dependent,—,—,stated
+6,Policy,Aluminium current collectors,—,—,stated
+6,Policy,9th September 2026 NTPC EOI,9 Sep 2026,date,quoted external
+7,Methodology,"200 km/day × 26 days × 312 days = 5,200 km/mo · 62,400 km/yr",200/26/312/5200/62400,km/day/days/days/km/mo/km/yr,calculated
+7,Config,"MACH1 — BEV, LFP 45 kWh, PMSM 80 bhp",45/80,kWh/bhp,stated
+7,Config,Maruti Dzire Tour S (CNG),—,—,stated
+7,Config,12.84 kWh/100 km,12.84,kWh/100km,stated
+7,Config,"Depot AC overnight, 90% wall-to-battery efficiency",90,%,stated
+7,Config,"Gross fare ₹11/km net → ₹57,200/month",11/57200,₹/km/₹/mo,stated
+7,Config,"Platform fee ₹67/vehicle-day → ₹1,742/month",67/1742,₹/day/₹/mo,stated
+7,Config,"Net fare ₹10.665/km → ₹55,458/month",10.665/55458,₹/km/₹/mo,stated
+7,Config,"Financing 10% annual, 60 months, no down payment",10/60,%/months,stated
+7,Config,5 years (loan) and 8 years (battery-phase horizon),5/8,years,stated
+7,Config,Discount rate 12% nominal annual,12,%,stated
+7,Config,"Escalation: Electricity 4.5%, CNG 3.5%, maintenance 4.0%, insurance 5.0%, residual 4.5%",4.5/3.5/4.0/5.0/4.5,%,stated
+7,Config,"Cities: Delhi, Mumbai, Bengaluru",—,—,stated
+7,Cost stack,"On-road EV ₹12,72,600",1272600,₹,calculated
+7,Cost stack,"On-road CNG ₹8,51,488",851488,₹,calculated
+7,Cost stack,"On-road diff −₹4,21,112",421112,₹,calculated
+7,Cost stack,"Finance EMI EV ₹16,22,339",1622339,₹,calculated
+7,Cost stack,"Finance EMI CNG ₹10,85,496",1085496,₹,calculated
+7,Cost stack,"Finance diff −₹6,99,077",699077,₹,calculated
+7,Cost stack,"Energy EV ₹2,00,304",200304,₹,calculated
+7,Cost stack,"Energy CNG ₹9,48,480",948480,₹,calculated
+7,Cost stack,"Energy diff +₹7,48,176",748176,₹,calculated
+7,Cost stack,"Maintenance EV ₹93,600",93600,₹,calculated
+7,Cost stack,"Maintenance CNG ₹2,10,000",210000,₹,calculated
+7,Cost stack,"Maintenance diff +₹1,16,400",116400,₹,calculated
+7,Cost stack,"Insurance EV ₹2,10,000",210000,₹,calculated
+7,Cost stack,"Insurance CNG ₹1,97,400",197400,₹,calculated
+7,Cost stack,"Insurance diff −₹12,600",12600,₹,calculated
+7,Cost stack,"Residual EV −₹3,30,876",330876,₹,calculated
+7,Cost stack,"Residual CNG −₹3,40,595",340595,₹,calculated
+7,Cost stack,"Residual diff +₹9,719",9719,₹,calculated
+7,Cost stack,"Subtotal EV ₹17,95,367",1795367,₹,calculated
+7,Cost stack,"Subtotal CNG ₹21,00,781",2100781,₹,calculated
+7,Cost stack,"Subtotal diff +₹3,05,414",305414,₹,calculated
+7,Cost stack,"Charging infra EV ₹1,74,000",174000,₹,calculated
+7,Cost stack,"Charging infra CNG ₹4,500",4500,₹,calculated
+7,Cost stack,"Charging infra diff −₹1,69,500",169500,₹,calculated
+7,Cost stack,"Total EV ₹19,69,367",1969367,₹,calculated
+7,Cost stack,"Total CNG ₹21,05,281",2105281,₹,calculated
+7,Cost stack,"Total diff +₹1,35,914",135914,₹,calculated
+7,Cost stack,Cost/km EV ₹6.31,6.31,₹/km,calculated
+7,Cost stack,Cost/km CNG ₹6.75,6.75,₹/km,calculated
+7,Cost stack,Cost/km diff +6.5%,6.5,%,calculated
+7,City table,"Delhi Financed 60 mo: EV 5.75, CNG 6.73, +14.5%",5.75/6.73/14.5,₹/km/%,calculated
+7,City table,"Delhi Cash outright: EV 4.63, CNG 5.98, +22.6%",4.63/5.98/22.6,₹/km/%,calculated
+7,City table,"Mumbai Financed 60 mo: EV 6.47, CNG 7.00, +7.6%",6.47/7.00/7.6,₹/km/%,calculated
+7,City table,"Mumbai Cash outright: EV 5.35, CNG 6.32, +15.3%",5.35/6.32/15.3,₹/km/%,calculated
+7,City table,"Bengaluru Financed 60 mo: EV 6.66, CNG 7.25, +8.2%",6.66/7.25/8.2,₹/km/%,calculated
+7,City table,"Bengaluru Cash outright: EV 5.45, CNG 6.51, +16.4%",5.45/6.51/16.4,₹/km/%,calculated
+7,Horizon table,"5yr: EV 5.75, CNG 6.73, +14.5%, +6.5% with infra, +6.7% NPV",5.75/6.73/14.5/6.5/6.7,₹/km/%,calculated
+7,Horizon table,"6yr: EV 5.06, CNG 6.34, +20.1%",5.06/6.34/20.1,₹/km/%,calculated
+7,Horizon table,"7yr: EV 4.57, CNG 6.05, +24.4%",4.57/6.05/24.4,₹/km/%,calculated
+7,Horizon table,"8yr: EV 4.20, CNG 5.84, +28.0%, +17.4% with infra, +14.6% NPV",4.20/5.84/28.0/17.4/14.6,₹/km/%,calculated
+7,Sensitivity,"Base: Delhi ELEC ₹4.50, CNG ₹76/kg, 25 km/kg, +14.5%",4.50/76/25/14.5,₹/kWh/₹/kg/km/kg/%,stated
+7,Sensitivity,"CNG 22 km/kg (city only, AC on): +19.5%",22/19.5,km/kg/%,calculated
+7,Sensitivity,"CNG 30 km/kg (highway, not metro duty): +7.6%",30/7.6,km/kg/%,calculated
+7,Sensitivity,CNG price ₹76 → ₹90/kg: +21.1%,76/90/21.1,₹/kg/%,calculated
+7,Sensitivity,CNG residual 40% → 45%: +12.8%,40/45/12.8,%/%,calculated
+7,Sensitivity,Electricity ₹4.50 → ₹8.00: +7.1%,4.50/8.00/7.1,₹/kWh/%,calculated
+7,Sensitivity,Electricity ₹4.50 → ₹10.00: +2.9%,4.50/10.00/2.9,₹/kWh/%,calculated
+7,Sensitivity,Electricity ₹4.50 → ₹12.00 (public DC): −1.4%,4.50/12.00/-1.4,₹/kWh/%,calculated
+7,Sensitivity,Electricity ₹4.50 → ₹18.00: −14.1%,4.50/18.00/-14.1,₹/kWh/%,calculated
+7,Sensitivity,EV residual 26% → 36% (deck's old assumption): +20.6%,26/36/20.6,%/%,calculated
+7,Sensitivity,Consumption 12.84 → 15.38 kWh/100km (deck's figure): +12.7%,12.84/15.38/12.7,kWh/100km/%,calculated
+7,Sensitivity,Worst case stacked (15.38 + ₹12 + resid 26%): −6.4%,15.38/12/26/-6.4,kWh/100km/₹/kWh/%/%,calculated
+7,Sensitivity,Best case stacked (12.84 + ₹4.50 + resid 36%): +20.6%,12.84/4.50/36/20.6,kWh/100km/₹/kWh/%/%,calculated
+7,Sensitivity,8-year horizon: +28.0%,28.0,%,calculated
+7,Lever 1,Cash purchase gives +17.5% vs financed +8.4%,17.5/8.4,%,calculated
+7,Lever 1,₹14 L asset interest ₹3.85 L vs CNG ₹2.33 L,3.85/2.33,Lakh ₹,calculated
+7,Lever 1,7-year tenure moves horizon from financed to cash,7,years,stated
+7,Lever 2,Delhi financed EV advantage roughly triples by year 8,3x,—,stated
+7,Conclusions,+19.5% to +11.6% EV advantage band,19.5/11.6,%,calculated
+7,Conclusions,Energy prices: above ₹11/kWh EV loses advantage,11,₹/kWh,calculated
+7,Conclusions,Depot tariffs ₹4.50–9.50/kWh,4.50-9.50,₹/kWh,stated
+7,Conclusions,Public DC charging ₹12–24/kWh,12-24,₹/kWh,stated
+7,Conclusions,EV has 45 hours/month downtime headroom,45,h/month,stated
+7,Conclusions,75 hours/month lost to charger queues (GreenSM),75,h/month,quoted external
+7,Conclusions,−28.4% result at 75 h/month,28.4,%,calculated
+7,Conclusions,Reliable depot charging essential,—,—,stated
+7,Factors,"Depot charging: ₹50,000 hardware + ₹30,000 install + ₹10,000 DISCOM = ₹99,000/vehicle",50000/30000/10000/99000,₹,calculated
+7,Factors,"Software and AMC ₹15,000/year",15000,₹/yr,stated
+7,Factors,N+1 redundancy,—,—,stated
+7,Factors,Depot off-peak tariffs ₹5.50–9/kWh,5.50-9,₹/kWh,stated
+7,Factors,Public DC retail ₹18–24/kWh,18-24,₹/kWh,stated
+7,Factors,At ₹4.50/kWh: EV energy ₹0.64/km,0.64,₹/km,calculated
+7,Factors,At ₹8.50/kWh: ₹1.21/km,1.21,₹/km,calculated
+7,Factors,At ₹12/kWh: ₹1.71/km,1.71,₹/km,calculated
+7,Factors,Baseline downtime 3.5 h/month,3.5,h/month,calculated
+7,Factors,"0.5 h queues, 1 h planned, 1.5 h repairs, 0.5 h charger failure",0.5/1/1.5/0.5,h/month,calculated
+7,Factors,"Baseline loss ₹702/month, ₹0.135/km, ₹42,097 over 5 years",702/0.135/42097,₹/mo/₹/km/₹/5yr,calculated
+7,Factors,Break-even 25.4 total downtime hours/month,25.4,h/month,calculated
+7,Factors,21.9 additional hours beyond baseline,21.9,h/month,calculated
+7,Factors,~75 h/month without depot charging → −28.4%,75/-28.4,h/month/%,calculated
+7,Factors,"Battery replacement: no replacement ₹5.75/km, +14.5%",5.75/14.5,₹/km/%,calculated
+7,Factors,"₹4 lakh replacement: ₹7.04/km, −4.5%",400000/7.04/-4.5,₹/₹/km/%,calculated
+7,Factors,"₹8 lakh: ₹8.32/km, −23.5%",800000/8.32/-23.5,₹/₹/km/%,calculated
+7,Factors,"₹12 lakh: ₹9.60/km, −42.6%",1200000/9.60/-42.6,₹/₹/km/%,calculated
+7,Factors,"Consistent calculation: 178 EFC/year, 16.85 years to 3,000 cycles",178/16.85/3000,EFC/yr/years/cycles,calculated
+7,Factors,"Published basis: 197.8 EFC/year, 15.16 years",197.8/15.16,EFC/yr/years,calculated
+7,Factors,"Battery-side throughput: 8,012 kWh/year",8012,kWh/yr,calculated
+7,Factors,EFC: 178 nominal 45 kWh; 181.3 usable 44.2 kWh; 197.8 wall/nominal,178/181.3/197.8,EFC/yr,calculated
+7,Factors,Calendar-ageing: 3.7 years to 80% (√t: 13.3 years) at 40°C,3.7/13.3/40,years/years/°C,calculated
+7,Factors,"Power-escalation break-even 5 years: Delhi 14.5%/yr, Mumbai 8.8%, Bengaluru 8.7%",14.5/8.8/8.7,%/yr,calculated
+7,Factors,Electricity escalation unambiguously bad; CNG leg carries it,—,—,stated
+7,Factors,Worst Mumbai −9.2 pp,9.2,pp,calculated
+7,Factors,"Only one negative cell: Bengaluru, 5-yr, cash, −0.4%",1/-0.4,cells/%,calculated
+7,Factors,CNG-side: periodic cylinder hydro-testing,—,—,stated
+7,Factors,"NPV at 12% hurdle, escalated, financed, incl ₹99,000 charger",12,%,stated
+8,Driver P&L,"Gross revenue ₹11 × 5,200 km = ₹57,200",11/5200/57200,₹/km/km/₹,calculated
+8,Driver P&L,"Platform access fee ₹67/day × 26 = ₹1,742",67/26/1742,₹/day/days/₹,calculated
+8,Driver P&L,"Energy EV −₹3,338",3338,₹/mo,calculated
+8,Driver P&L,"Energy CNG −₹15,808",15808,₹/mo,calculated
+8,Driver P&L,"Maintenance EV −₹1,560",1560,₹/mo,calculated
+8,Driver P&L,"Maintenance CNG −₹3,500",3500,₹/mo,calculated
+8,Driver P&L,"Insurance EV −₹3,500",3500,₹/mo,calculated
+8,Driver P&L,"Insurance CNG −₹3,290",3290,₹/mo,calculated
+8,Driver P&L,"Take-home EV ₹47,060",47060,₹/mo,calculated
+8,Driver P&L,"Take-home CNG ₹32,860",32860,₹/mo,calculated
+8,Driver P&L,"Advantage +₹14,200/month",14200,₹/mo,calculated
+8,Driver P&L,"Annualised EV ₹5,64,715",564715,₹/yr,calculated
+8,Driver P&L,"Annualised CNG ₹3,94,320",394320,₹/yr,calculated
+8,Driver P&L,"Five-year cumulative +₹8,51,976",851976,₹/5yr,calculated
+8,Driver P&L,"Take-home during loan EV ₹20,021",20021,₹/mo,calculated
+8,Driver P&L,"Take-home during loan CNG ₹14,768",14768,₹/mo,calculated
+8,Driver P&L,"Advantage during loan +₹5,252/month",5252,₹/mo,calculated
+8,Driver P&L,"Take-home year 6 onward EV ₹47,060",47060,₹/mo,calculated
+8,Driver P&L,"Take-home year 6 onward CNG ₹32,860",32860,₹/mo,calculated
+8,Driver P&L,"Advantage after loan +₹14,200/month",14200,₹/mo,calculated
+8,Driver P&L,"EV advantage is ₹14,200 every month, at every fare and every duty level",14200,₹/mo,stated
+8,Driver P&L,"₹14,200 worth twice as much in % to lowest-paid driver",—,—,stated
+8,Driver P&L,Driver on ₹11/km street fare gains 43%,43,%,calculated
+8,Driver P&L,Driver on ₹22/km airport run gains 16%,16,%,calculated
+8,Driver P&L,At 150 km/day EV take-home is 145% of CNG's,145,%,calculated
+8,Driver P&L,At 300 km/day EV take-home is 141% of CNG's,141,%,calculated
+8,Fare table,"₹11/km: EV ₹47,060, CNG ₹32,860, advantage ₹14,200, +43.2%",47060/32860/14200/43.2,₹/mo/%,calculated
+8,Fare table,"₹14/km: EV ₹62,660, CNG ₹48,460, advantage ₹14,200, +29.3%",62660/48460/14200/29.3,₹/mo/%,calculated
+8,Fare table,"₹18/km: EV ₹83,460, CNG ₹69,260, advantage ₹14,200, +20.5%",83460/69260/14200/20.5,₹/mo/%,calculated
+8,Fare table,"₹22/km: EV ₹1,04,260, CNG ₹90,060, advantage ₹14,200, +15.8%",104260/90060/14200/15.8,₹/mo/%,calculated
+8,Stress tests,CNG price rises to ₹200/kg (today ₹76),200/76,₹/kg,stated
+8,Stress tests,"Duty falls from 200 to 150 km/day: +₹10,597 instead of ₹14,200",150/10597/14200,km/day/₹/mo,calculated
+8,Stress tests,"Fare halves to ₹5.50/km (legacy commission): advantage still ₹14,200",5.50/14200,₹/km/₹/mo,calculated
+8,Stress tests,Platform switches to per-ride commission: no change,—,—,stated
+8,Platform model,"Flat ₹67/day (Ola/Uber/Rapido): EV ₹47,060, CNG ₹32,860, advantage ₹14,200",67/47060/32860/14200,₹/day/₹/mo,calculated
+8,Platform model,"Legacy 20% per ride: EV ₹48,799, CNG ₹34,600, advantage ₹14,200",20/48799/34600/14200,%/₹/mo,calculated
+8,Platform model,"Legacy 25% per ride: EV ₹48,799, CNG ₹34,599, advantage ₹14,200",25/48799/34599/14200,%/₹/mo,calculated
+8,Gross earnings table,"₹93,600 at ₹18.00/km × 5,200 km/month",93600/18/5200,₹/₹/km/km/mo,calculated
+8,Gross earnings table,"₹1,14,400 at ₹22.00/km × 5,200 km/month",114400/22/5200,₹/₹/km/km/mo,calculated
+8,What not to claim,"Not ₹93,600 in take-home — gross revenue",93600,₹/mo,stated
+8,What not to claim,"At ₹11/km falls to ₹20,021 if driver finances vehicle",20021,₹/mo,calculated
+8,What not to claim,"Below ~60 km/day, one vehicle cannot cover fixed costs",60,km/day,stated
+8,What not to claim,₹1.24 lakh/month reduction in operating costs,124000,₹/mo,stated
+8,Rider evidence,"Dzire sub-ratings: Mileage 5.0/5, Maintenance 4.9/5, Performance 4.8/5, Comfort 4.7/5, Safety 4.1/5, Features & styling 1.2/5",5.0/4.9/4.8/4.7/4.1/1.2,score/5,quoted external
+8,Rider evidence,"SERVQUAL: Reliability β=.182 predictor, 74% top complaint cancellation",.182/74,β/%,quoted external
+8,Rider evidence,"Tangibility/condition β=.182 predictor, 30% unclean cars",.182/30,β/%,quoted external
+8,Rider evidence,Empathy/courtesy β=.263 predictor,.263,β,quoted external
+8,Rider evidence,Price fairness explains 47.6% of satisfaction variation,47.6,%,quoted external
+8,Rider evidence,"Safety top stated priority, 6% formal complaints",6,%,quoted external
+8,Rider evidence,Quiet/comfort most-praised EV attribute,—,—,quoted external
+8,Rider evidence,"LocalCircles 17,993 respondents, 325 districts (2025)",17993/325,respondents/districts,quoted external
+8,Rider evidence,"Bengaluru survey 10,000+ responses",10000+,responses,quoted external
+8,Rider evidence,"85% Uber users, 93% Ola users reported cancellations/phone use/surge/unclean",85/93,%,quoted external
+8,Rider evidence,Dzire boot 382 L,382,L,stated
+8,Rider evidence,FleetLine E1 boot 400 L,400,L,stated
+8,Rider evidence,Driver behaviour 25% complaint share,25,%,quoted external
+8,Rider evidence,Safety concerns 6% complaint share,6,%,quoted external
+8,Rider evidence,Cancellation 74% top complaint,74,%,quoted external
+8,Rider evidence,Surge pricing 62%,62,%,quoted external
+8,Rider evidence,Long waiting times 53%,53,%,quoted external
+8,Rider evidence,Unclean vehicles 30%,30,%,quoted external
+9,TPMS,"Normal: 32–35 psi, 30–50°C",32-35/30-50,psi/°C,stated
+9,TPMS,Warning: below 28 psi or above 60°C,28/60,psi/°C,stated
+9,TPMS,Critical: below 22 psi or above 70°C,22/70,psi/°C,stated
+9,Fast charging,CC phase charges to ~70–80% capacity,70-80,%,stated
+9,Pilot targets,Predictive maintenance: ≥7-day advance warning,7,days,stated
+9,Pilot targets,20–30% less downtime,20-30,%,stated
+9,Pilot targets,Smart dispatch: ~15% fewer deadhead km,15,%,stated
+9,Pilot targets,Smart charging: 15–18% lower charging cost,15-18,%,stated
+10,Phase 1,2026–27 · Delhi NCR,2026-27,date,stated
+10,Phase 1,"1,000–2,000 vehicles",1000-2000,vehicles,stated
+10,Phase 1,1 × 7.4 kW AC port per vehicle,7.4,kW,stated
+10,Phase 1,10% N+1 spares,10,%,stated
+10,Phase 1,"₹99,000/vehicle installed",99000,₹/vehicle,stated
+10,Phase 1,Overnight window 3.86 h,3.86,h,calculated
+10,Phase 1,25.68 kWh ÷ (7.4 kW × 0.90) = 3.86 h,25.68/7.4/0.90/3.86,kWh/kW/%/h,calculated
+10,Phase 1,No DC needed,—,—,stated
+10,Phase 1,Cells: Reliance Jamnagar LFP primary,—,—,stated
+10,Phase 1,Power: ₹4.50/kWh Delhi BEE EV tariff,4.50,₹/kWh,stated
+10,Phase 1,"1,000–2,000 is indicative, gate-conditional",—,—,stated
+10,Phase 2,2028–30 · Delhi + Bengaluru + Mumbai,2028-30,date,stated
+10,Phase 2,"Cumulative 15,000–25,000 vehicles",15000-25000,vehicles,stated
+10,Phase 2,All three cities clear at five years,—,—,stated
+10,Phase 3,2031–35 · Pan-India,2031-35,date,stated
+10,Phase 3,"100,000+ cumulative",100000+,vehicles,stated
+10,Gates,G1: Two qualified LFP sources at price parity within 10%,2/10,sources/%,stated
+10,Gates,G2: 12 months of measured paid km/day ≥ 200,12/200,months/km/day,stated
+10,Gates,"G3: 12 months per-cell SoH telemetry, 3.6× disagreement",12/3.6,months/x,stated
+10,Gates,G3: Naumann √t gives 13.3 yr at 40 °C,13.3/40,yr/°C,stated
+10,Gates,G3: Lewerenz linear gives 3.7 yr,3.7,yr,stated
+10,Gates,"G4: 20,000 cumulative vehicles with 21.9 h/month downtime slack",20000/21.9,vehicles/h/mo,stated
+10,Gates,G4: 25–40% public-charger session-failure rate,25-40,%,stated
+10,Gates,G5: Measured operating domestic LFP capacity >20 GWh,20,GWh,stated
+10,Gates,G5: automotive qualification,—,—,stated
+10,Gates,FAIL G3: Capacity-retention guarantee unsignable,—,—,stated
+10,Localisation,L1 pack assembly 2026–27,2026-27,date,stated
+10,Localisation,L2 domestic cells for a share 2028–30,2028-30,date,stated
+10,Localisation,L3 CAM/AM/separator content 2031+,2031+,date,stated
+10,Localisation,ACC PLI delivered 1.4 GWh of 50 GWh — 2.8%,1.4/50/2.8,GWh/GWh/%,stated
+10,Localisation,"Reliance Jamnagar 40 GWh, ramping H2 2026",40,GWh,quoted external
+10,Localisation,"Ola Cell only Indian producer at scale, NMC-first",—,—,quoted external
+10,Infrastructure,"AIS-138 Part 2 amended 2022, CCS2 for four-wheelers",2022,date,quoted external
+10,Infrastructure,OCPP 1.6J,1.6J,version,quoted external
+10,Infrastructure,"Beyond ~300 km one-way, destination charging mandatory",300,km,stated
+10,Infrastructure,Range envelope: 268 km at 15% reserve (315 km at zero),268/15/315,km/%/km,stated
+10,Infrastructure,"Delhi–Agra 200, Mumbai–Pune 150, Mumbai–Nashik 170, Bengaluru–Mysuru 145",200/150/170/145,km,stated
+10,Infrastructure,Delhi–Jaipur 280 (88.8% of usable),280/88.8,km/%,stated
+10,Policy,"Delhi: 0% road tax for life, ₹1 lakh scrapping incentive",0/100000,%/₹,quoted external
+10,Policy,Delhi expiry 31-Mar-2030,31 Mar 2030,date,quoted external
+10,Policy,"Maharashtra: 15% of ex-factory, capped ₹2 lakh, 25,000 units",15/200000/25000,%/₹/units,quoted external
+10,Policy,Maharashtra: 100% toll exemption Mumbai–Pune Expressway + Samruddhi,100,%,quoted external
+10,Policy,Maharashtra expiry 31-Mar-2030,31 Mar 2030,date,quoted external
+10,Policy,"Karnataka: 20–25% capex, stamp-duty reimbursement",20-25,%,quoted external
+10,Policy,Karnataka expiry 2030,2030,date,quoted external
+10,Policy,Central: PM E-DRIVE no e-4W category,—,—,quoted external
+10,Policy,Both Delhi and Maharashtra expire 5 years before 2035 target,5,years,stated
+10,Economics,"NPV at 12% hurdle, escalated, financed, incl ₹99,000 charger",12,%,stated
+10,Economics,"Delhi 5-yr +6.7%, 8-yr +14.6%, 2035 5-yr +15.7%, 2035 8-yr +23.1%",6.7/14.6/15.7/23.1,%,calculated
+10,Economics,"Mumbai 5-yr +4.0%, 8-yr +10.6%, 2035 5-yr +10.4%, 2035 8-yr +16.4%",4.0/10.6/10.4/16.4,%,calculated
+10,Economics,"Bengaluru 5-yr +0.9%, 8-yr +9.0%, 2035 5-yr +9.0%, 2035 8-yr +16.3%",0.9/9.0/9.0/16.3,%,calculated
+10,Economics,"Power-escalation break-even 5 years: Delhi 14.5%/yr, Mumbai 8.8%, Bengaluru 8.7%",14.5/8.8/8.7,%/yr,calculated
+10,Economics,Electricity escalation unambiguously bad for EV in every city,—,—,stated
+10,Economics,Worst Mumbai −9.2 pp,9.2,pp,calculated
+10,Economics,Only one negative cell: Bengaluru 5-yr cash −0.4%,1/-0.4,cells/%,calculated
+11,Synthesis,Street-hail intra-city ~58% of rides,58,%,stated
+11,Synthesis,Airport + corporate commute ~19% combined,19,%,stated
+11,Synthesis,Price sensitivity intra-city 0.85,0.85,index,stated
+11,Synthesis,EV adoption intra-city ~10%,10,%,stated
+11,Synthesis,Price sensitivity margin segment 0.30–0.35,0.30-0.35,index,stated
+11,Synthesis,EV adoption margin segment ~18%,18,%,stated
+11,Synthesis,"BEV LFP 45 kWh, PMSM 80 bhp",45/80,kWh/bhp,stated
+11,Synthesis,268 km at 15% reserve (315 km at zero),268/15/315,km/%/km,stated
+11,Synthesis,"3,995 mm — 5 mm inside small-car tax line",3995/5,mm/mm,stated
+11,Synthesis,"200 km/day, return-to-base, one 7.4 kW AC port, overnight",200/7.4,km/day/kW,stated
+11,Synthesis,"NPV at 12% hurdle, escalated, with ₹99,000/vehicle depot charger",12/99000,%/₹,stated
+11,Synthesis,"Delhi 5-yr +6.7%, 8-yr +14.6%",6.7/14.6,%,calculated
+11,Synthesis,"Mumbai 5-yr +4.0%, 8-yr +10.6%",4.0/10.6,%,calculated
+11,Synthesis,"Bengaluru 5-yr +0.9%, 8-yr +9.0%",0.9/9.0,%,calculated
+11,Synthesis,Bengaluru cash −0.4% (one negative cell),-0.4,%,calculated
+11,Synthesis,Broker/platform fees identical on either powertrain,—,—,stated
+11,Synthesis,"Inter-city: Delhi–Agra 200, Mumbai–Pune 150, Mumbai–Nashik 170, Bengaluru–Mysuru 145",200/150/170/145,km,stated
+11,Synthesis,Delhi–Jaipur 280 marginal,280,km,stated
+11,Synthesis,Beyond ~300 km destination charging mandatory,300,km,stated
+11,Synthesis,Published LFP studies disagree 3.6× on time-to-80%,3.6,x,stated
+11,Synthesis,8-year capacity-retention guarantee,8,years,stated
+11,Synthesis,"PM E-DRIVE ₹11,900 cr covers 2W, 3W, rickshaws, ambulances, trucks, buses, charging — not 4W",11900,Crore ₹,quoted external
+11,Synthesis,"Maharashtra: 15% of ex-factory, capped ₹2 lakh, 25,000 units",15/200000/25000,%/₹/units,quoted external
+11,Synthesis,Delhi road-tax exemption + Maharashtra incentive expire 31 March 2030,31 Mar 2030,date,quoted external
+11,Synthesis,Five years before target year,5,years,stated
+11,Synthesis,Worth about five points,5,points,stated
+11,Synthesis,"1,000–2,000 vehicles, Delhi, gated",1000-2000,vehicles,stated

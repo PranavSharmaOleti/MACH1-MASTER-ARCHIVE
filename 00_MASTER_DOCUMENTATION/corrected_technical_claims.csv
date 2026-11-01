@@ -1,0 +1,3 @@
+Claim ID,Slide,Context,Claim,Supporting evidence,Source,Verification status,Notes
+MCH-T-004,7,AI & CONNECTED MOBILITY,"TPMS, fast-charging CC/CV, system architecture, illustrative pilot targets (subject to validation).",Deck narrative,"≥7-day advance warning, 20–30% less downtime, ~15% fewer deadhead km, 15–18% lower charging cost",Discrepancy,"45 h headroom claim: 25.4 break-even − 3.5 baseline = 21.9 h/mo, not 45 h. Deck's 45 h unexplained."
+MCH-T-001,7,TOTAL COST OF OWNERSHIP ANALYSIS,EV advantage holds against measured CNG efficiency (+19.5% to +11.6%),"figures.txt sensitivity table (Mumbai CNG 30 km/kg, CNG ₹90/kg)",tco_analysis.py §D sensitivity,Discrepancy,+19.5% to +11.6% band does not match table worst case +7.6% (Mumbai financed).

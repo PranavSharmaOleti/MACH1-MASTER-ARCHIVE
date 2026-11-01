@@ -1,0 +1,31 @@
+Trace ID,Presentation value / result,Source inputs,Formula / method,Deck value,Reproduced value,Match?,Verification status,Source
+MCH-C-001,Delhi 5-yr ckm EV (excl infra),"Total EV ₹17,95,367 ÷ 312,000 km",total ÷ km,5.75,5.754,Match (5.75),Verified — Derived,tco_engine.tco() / figures.txt §L
+MCH-C-002,Delhi 5-yr ckm CNG (excl infra),"Total CNG ₹21,00,781 ÷ 312,000 km",total ÷ km,6.73,6.733,Match (6.73),Verified — Derived,tco_engine.tco() / figures.txt §L
+MCH-C-003,Delhi 5-yr EV advantage (excl infra),(6.73−5.75)/6.73,(CNG−EV)/CNG,14.5%,14.54%,Match (+14.5%),Verified — Derived,figures.txt §L / slide 7
+MCH-C-004,Daily energy @ 200 km/day,12.84 kWh/100km × 200 km ÷ 100,kWh/100km × km/day ÷ 100,25.68 kWh,25.68,Exact,Verified — Derived,tco_engine EV kwh100 / figures.txt §K
+MCH-C-005,Charging infrastructure per vehicle,"(₹50,000 h/w + ₹30,000 install + ₹10,000 DISCOM) × 1.10 N+1",(50000+30000+10000)×1.10,"₹99,000",99000,Exact,Verified — Derived,tco_engine.py §G / figures.txt:40
+MCH-C-006,Overnight charging window,25.68 kWh ÷ (7.4 kW × 0.90 eff),kWh ÷ (kW × eff),3.86 h,3.856 h,Match (3.86),Verified — Derived,tco_engine §G / figures.txt:39 / slide 10
+MCH-C-007,Max range @ zero reserve,45 kWh × 0.90 usable ÷ 0.1284 kWh/km,pack × usable ÷ kWh/km,315.4 km,315.42 km,Match (315.4),Verified — Derived,figures.txt §N1 / tco_analysis.py §N
+MCH-C-008,Range @ 15% reserve,315.4 km × (1−0.15),range × (1−reserve),268.1 km,268.09 km,Match (268.1),Verified — Derived,figures.txt §N1 / slide 11
+MCH-C-009,EFC nominal basis,"8,012.2 kWh/yr ÷ 45 kWh",kWh/yr ÷ kWh,178/yr,178.05,Match (178),Verified — Derived,figures.txt §K / tco_analysis.py §K
+MCH-C-010,EFC usable basis,"8,012.2 kWh/yr ÷ 44.2 kWh",kWh/yr ÷ kWh,181.3/yr,181.27,Match (181.3),Verified — Derived,figures.txt §K / tco_analysis.py §K
+MCH-C-011,EFC wall/nominal (cited ~198),"(12.84/0.90)/100 × 62,400 ÷ 45",(kWh/100km/eff)/100 × km/yr ÷ kWh,197.8/yr,197.83,Match (~198),Discrepancy,Overstates nominal by 11.1% (wall vs nominal mixing)
+MCH-C-012,"Years to 3,000 cycles (nominal)","3,000 ÷ 178 EFC/yr",cycles ÷ EFC/yr,16.85 yr,16.85,Exact,Verified — Derived,figures.txt §K
+MCH-C-013,Downtime net cost per hour,gross ₹220 − platform ₹6.70 − energy avoided ₹12.84,220 − 6.70 − 12.84,₹200.46/h,200.46,Exact,Verified — Derived,figures.txt §I / tco_analysis.py §I
+MCH-C-014,Baseline downtime,0.5 queue + 1.0 planned + 1.5 repair + 0.5 spare-wait,sum of components,3.5 h/mo,3.5,Exact,Verified — Derived,figures.txt §I / tco_analysis.py §I
+MCH-C-015,Platform fee per month,₹67/day × 26 days,fee/day × days/mo,"₹1,742/mo",1742,Exact,Verified — Derived,tco_engine.py PLATFORM_FEE_MO
+MCH-C-016,Net fare,"₹11/km − ₹1,742 ÷ 5,200 km",fare − fee/km,₹10.665/km,10.665,Exact,Verified — Derived,tco_engine.py NET_FARE_KM
+MCH-C-017,Monthly gross revenue @ ₹11/km,"₹11 × 5,200 km",fare × km/mo,"₹57,200/mo",57200,Exact,Verified — Derived,tco_engine REVENUE_MONTH
+MCH-C-018,Driver advantage (take-home),"₹47,060 − ₹32,860",EV − CNG take-home,"₹14,200/mo",14200,Exact,Verified — Derived,tco_analysis.py §A / slide 8
+MCH-C-019,Driver advantage during loan,"₹20,021 − ₹14,768",EV − CNG during loan,"₹5,252/mo",5252,Exact,Verified — Derived,tco_analysis.py §J / slide 8
+MCH-C-020,LFP time-to-80% disagreement,13.3 yr (Naumann √t) ÷ 3.7 yr (Lewerenz linear),Naumann ÷ Lewerenz,3.6×,3.59,Match (3.6×),Verified — Derived,battery_model / figures.txt §O / slide 10 G3
+MCH-C-021,ACC PLI share delivered,1.4 GWh ÷ 50 GWh × 100,delivered ÷ target × 100,2.8%,2.8%,Exact,External source,Deck slide 10 (public policy figure)
+MCH-C-022,Delhi 5-yr NPV incl infra (headline),"npv_flow() incl infra, 12% disc, escalated",NPV of cash flows,6.7%,6.67%,Match (+6.7%),Verified — Derived,tco_analysis.py §L / figures.txt:83 — HEADLINE Rev 4 cell
+MCH-C-023,Delhi 8-yr NPV incl infra,"npv_flow() incl infra, 12% disc, escalated",NPV of cash flows,14.6%,14.59%,Match (+14.6%),Verified — Derived,tco_analysis.py §L / figures.txt:83 — HEADLINE Rev 4 cell
+MCH-C-024,Delhi 5-yr advantage incl infra (nominal),tco() incl infra,(CNG−EV)/CNG incl infra,6.5%,6.5%,Match,Verified — Derived,tco_analysis.py §L / figures.txt:44
+MCH-C-025,Delhi 5-yr cash advantage,tco() cash outright,(CNG−EV)/CNG cash,22.6%,22.6%,Match,Verified — Derived,figures.txt §L city matrix
+MCH-C-026,Mumbai 5-yr financed advantage,tco() Mumbai,(CNG−EV)/CNG,7.6%,7.6%,Match,Verified — Derived,figures.txt §L city matrix
+MCH-C-027,Bengaluru 5-yr financed advantage,tco() Bengaluru,(CNG−EV)/CNG,8.2%,8.2%,Match,Verified — Derived,figures.txt §L city matrix
+MCH-C-028,Negative cells (48-cell model),bisect gap per city/horizon/basis,count of negative advantage cells,1 of 48,1,Exact,Verified — Derived,tco_analysis.py §M / figures.txt:94
+MCH-C-029,Delhi 5-yr ckm incl infra EV,total incl infra ÷ km,total ÷ km,6.31,6.31,Match,Verified — Derived,figures.txt:44 / slide 7
+MCH-C-030,Delhi 5-yr ckm incl infra CNG,total incl infra ÷ km,total ÷ km,6.75,6.75,Match,Verified — Derived,figures.txt:44 / slide 7
