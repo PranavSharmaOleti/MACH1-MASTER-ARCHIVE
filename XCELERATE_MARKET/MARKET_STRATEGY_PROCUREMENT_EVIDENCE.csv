@@ -1,0 +1,19 @@
+channel,example,operator_or_party,vehicle_or_asset,batch_size,financing,ownership_outcome,evidence_status,source
+OEM-platform bulk order,Tata-Uber 25000 Xpres-T,Tata Motors + Uber,25000 Xpres-T EVs,25000,OEM-platform partnership,Fleet deployed via Uber fleet partners,S-B/C-B,Mint Feb 2023
+OEM-platform bulk order,Tata-BluSmart 10000 Xpres-T,Tata Motors + BluSmart,10000 Xpres-T EVs,10000,OEM-platform partnership,Fleet deployed (BluSmart, now defunct),S-B/C-B,Autocar India 2023
+Uber co-investment,Everest Fleet 20M+30M,Uber + Everest Fleet,Fleet expansion,Not specified,Bank debt + Uber equity,Driver ownership pathways + fleet management,S-B/C-B,ET Sep 2024
+Leasing from lenders,Evera asset-light model,Evera + lenders,Leased EVs,Not specified,Fixed monthly rentals,Asset-light (leased not owned),S-B/C-B,ET Mar 2023
+Repossessed-asset acquisition,Evera repossessed 500 BluSmart EVs,Evera + BluSmart lenders,500 BluSmart EVs,500,Lender repossession,Repossessed from insolvent operator,S-B/C-B,BS/PTI Oct 2026
+Bank-financed fleet ownership,Everest bank debt,Everest Fleet,Mixed CNG/EV fleet,Not specified,Bank debt + OEM partnerships,Fleet management for Uber/Ola,S-C/C-C,Everest website
+Mufin Green Finance,OHM E-Cabs financing,OHM + Mufin,100 EVs deployed 1000+ ordered,100 deployed,Financed (Mufin),Airport EV operator,S-C/C-C,EVJoints guide
+Cooperative model,Bharat Taxi driver-owned,Sahakar Taxi Cooperative,Driver-owned cabs,600 phase 1 national,Cooperative (no external financing),Driver-owned cooperative (zero commission),S-B/C-B,TOI Jul 2026
+Leasing to driver-partners,Ola Fleet (GCabs),Ola Fleet Technologies,Leased cabs,Not specified,Leasing to driver-partners,Driver-partner model,S-C/C-C,Entrackr 2024
+Direct OEM order,OHM ordered 1000 Xpres-T + 300 BYD e6,OHM E-Cabs,1300 EVs ordered,1300 ordered,Not specified (ordered),Delivery unverified,S-C/C-C,EVJoints guide
+Fleet size (stock),Everest 23500+,Everest Fleet,Mixed CNG/EV,Not applicable (stock not flow),Mixed,Bank debt driver pathways,S-C/C-C,Everest website
+Fleet size (stock),Lithium 3000+ EVs,Lithium Urban,Electric fleet,Not applicable (stock not flow),100% owned,Owned fleet,S-C/C-C,Lithium website
+Fleet size (stock),Refex 1750+ vehicles,Refex Mobility,Mixed fleet,Not applicable (stock not flow),Leasing,Leasing,S-C/C-C,BS FY26
+Fleet size (stock),Evera ~2200+500,Evera,EV fleet,Not applicable (stock not flow),Asset-light (leased),Leased + repossessed,S-C/C-C,BS/PTI Oct 2026
+Fleet size (stock),OHM 100 deployed,OHM E-Cabs,EV fleet,Not applicable (stock not flow),Financed (Mufin),Financed,S-C/C-C,EVJoints guide
+Fleet size (stock),Snap-E 600 EVs,Snap-E,EV fleet,Not applicable (stock not flow),Owned,Owned fleet,S-C/C-C,EVJoints guide
+Fleet size (stock),Bharat Taxi 600 phase 1,Bharat Taxi,Mixed fleet,Not applicable (stock not flow),Cooperative,Driver-owned cooperative,S-C/C-C,TOI Jul 2026
+Fleet size (stock),WTi 2000+ target,WTi Cabs,Premium fleet,Not applicable (target not achieved),Not specified,Premium (Uber Black),S-C/C-C,Company statement 2025

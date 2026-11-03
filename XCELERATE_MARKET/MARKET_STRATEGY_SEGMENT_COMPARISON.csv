@@ -1,0 +1,73 @@
+archetype,metric,value,unit,definition,geography,period,source,evidence_status,calculation_notes
+Intra-city street-hail,Market volume (platform proxy),591300000,rides/yr,Annualised daily cab rides Uber+Ola+Rapido,India,Jan 2025 data annualised,Motilal Oswal via Business Standard 18 Apr 2025,S-B/C-B,840000+460000+320000=1620000/day x 365
+Intra-city street-hail,Market volume (market-wide),810000000,rides/yr,Cab share of total ride-hailing trips,India,CY2025,Redseer via Business Standard 7 May 2026,S-B/C-B,27% x ~3.0B total; arithmetic derivation
+Intra-city street-hail,Avg trip distance (deck),12.7,km/trip,Paid km per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Intra-city street-hail,Km per day (deck),95,km/day,Paid km per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Intra-city street-hail,Trips per day (deck),7.5,trips/vehicle-day,Completed trips per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Intra-city street-hail,Fare per trip (deck),350,INR/trip,Gross fare per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Intra-city street-hail,Gross revenue per vehicle-day (deck),2625,INR/vehicle-day,Trips x fare,India,Deck (no period),Deck p3,S-D/C-D,7.5 x 350
+Intra-city street-hail,Gross revenue per paid trip-km (deck),27.58,INR/paid trip-km,Revenue per day / paid km per day,India,Deck (no period),Deck p3,S-D/C-D,2625/95
+Intra-city street-hail,Driver revenue per month (deck),68250,INR/vehicle-month,Gross fare revenue (trips x fare x 26 days),India,Deck (no period),Deck p3,S-D/C-D,Gross fare not take-home
+Intra-city street-hail,Price sensitivity (deck),0.85,index,Deck price sensitivity coefficient,India,Deck (no period),Deck p3,S-D/C-D,No source; undefined scale
+Intra-city street-hail,EV share (deck),10,percent,EV share of segment,India,Deck (no period),Deck p3,S-D/C-D,Unsourced; contradicts audience doc 16-25%
+Intra-city street-hail,Growth (deck),18,percent,Growth rate,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Intra-city street-hail,Verified trips/day anchor,8,trips/driver-day,Metro driver utilisation,India,CY2025,Redseer (S-B/C-B),S-B/C-B,Metro drivers ~8 trips/day 220-240/month
+Intra-city street-hail,Verified fare anchor,300-400,INR/trip,Average fare top-7 cities,India,CY2025,Redseer (S-B/C-B),S-B/C-B,Smaller cities Rs 200-250
+Daily commute-subscription,Market volume (platform proxy),591300000,rides/yr,Annualised platform cab rides (all segments),India,Jan 2025,Motilal Oswal via BS,S-B/C-B,Not segment-specific
+Daily commute-subscription,Avg trip distance (deck),22.0,km/trip,Paid km per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Daily commute-subscription,Km per day (deck),176,km/day,Paid km per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Daily commute-subscription,Trips per day (deck),8.0,trips/vehicle-day,Completed trips per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Daily commute-subscription,Fare per trip (deck),550,INR/trip,Gross fare per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Daily commute-subscription,Gross revenue per vehicle-day (deck),4400,INR/vehicle-day,Trips x fare,India,Deck (no period),Deck p3,S-D/C-D,8 x 550
+Daily commute-subscription,Gross revenue per paid trip-km (deck),25.00,INR/paid trip-km,Revenue per day / paid km per day,India,Deck (no period),Deck p3,S-D/C-D,4400/176
+Daily commute-subscription,Driver revenue per month (deck),114400,INR/vehicle-month,Gross fare revenue,India,Deck (no period),Deck p3,S-D/C-D,Gross fare not take-home
+Daily commute-subscription,Price sensitivity (deck),0.90,index,Deck price sensitivity coefficient,India,Deck (no period),Deck p3,S-D/C-D,No source
+Daily commute-subscription,EV share (deck),12,percent,EV share of segment,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Daily commute-subscription,Growth (deck),24,percent,Growth rate,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Daily commute-subscription,Verified utilisation anchor,300,km/day,Corporate EV daily km (Lithium Urban),India,2025,Mint interview (S-C/C-C),S-C/C-C,10-12h shifts
+Airport transfer,Market volume (passenger movements),195940000,passenger movements,Apr-Sep 2026 domestic+international,India,Apr-Sep 2026,AAI via NIE (S-C/C-C),S-C/C-C,Secondary compilation; exact 196.24M unverified
+Airport transfer,Market volume (app-cab passenger journeys),78500000-117800000,passenger journeys/yr,20-30% mode share applied to ~392.5M annualised,India,Modelled,Deck assumption (S-D/C-D),S-D/C-D,Passenger-based not vehicle trips
+Airport transfer,Market volume (app-cab vehicle trips),56000000-84000000,vehicle trips/yr,Passenger journeys / 1.4 occupancy (illustrative),India,Illustrative,Assumption (S-D/C-D),S-D/C-D,Illustrative only
+Airport transfer,Avg trip distance (deck),35.0,km/trip,Paid km per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Airport transfer,Km per day (deck),210,km/day,Paid km per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Airport transfer,Trips per day (deck),6.0,trips/vehicle-day,Completed trips per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Airport transfer,Fare per trip (deck),600,INR/trip,Gross fare per trip,India,Deck (no period),Deck p3,S-D/C-D,Corroborated by Evera avg ~Rs 600
+Airport transfer,Gross revenue per vehicle-day (deck),3600,INR/vehicle-day,Trips x fare,India,Deck (no period),Deck p3,S-D/C-D,6 x 600
+Airport transfer,Gross revenue per paid trip-km (deck),17.14,INR/paid trip-km,Revenue per day / paid km per day,India,Deck (no period),Deck p3,S-D/C-D,3600/210; lowest of 5
+Airport transfer,Driver revenue per month (deck),93600,INR/vehicle-month,Gross fare revenue,India,Deck (no period),Deck p3,S-D/C-D,Gross fare not take-home
+Airport transfer,Price sensitivity (deck),0.35,index,Deck price sensitivity coefficient,India,Deck (no period),Deck p3,S-D/C-D,No source
+Airport transfer,EV share (deck),18,percent,EV share of segment,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Airport transfer,Growth (deck),26,percent,Growth rate,India,Deck (no period),Deck p3,S-D/C-D,Unsourced; 19.14% CAGR separate unverified claim
+Airport transfer,Verified fare anchor,600,INR/trip,Evera airport trip average,Delhi,2025,Rediff (S-B/C-B),S-B/C-B,Company-reported
+Airport transfer,Pick-up fee (Delhi),290,INR/trip,Mandatory pick-up fee per app-cab trip,Delhi,2025,ET/TOI (S-A/C-A),S-A/C-A,Increased ~40%; toll+fee ~50% of short fare
+Airport transfer,Charging stations (Delhi),12,stations,Public charging at IGI,Delhi,Oct 2022,DIAL blog (S-A/C-A),S-A/C-A,For passengers employees and cab service providers
+Airport transfer,Charging points (Delhi),22,points,Public charging points at IGI,Delhi,Oct 2022,DIAL blog (S-A/C-A),S-A/C-A,22 points across 12 stations
+Airport transfer,Leela Mega Charger (Mumbai),16,guns,DC fast charging near CSI T2,Mumbai,Sep 2026,Fortune India (S-B/C-B),S-B/C-B,600 kW targeting taxis and ride-hailing fleets
+Inter-city/outstation,Avg trip distance (deck),280,km/trip,Paid km per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Inter-city/outstation,Km per day (deck),340,km/day,Paid km per vehicle-day (or 420 if 1.5x280),India,Deck (no period),Deck p3,S-D/C-D,1.5x280=420; 340 implies deadhead
+Inter-city/outstation,Trips per day (deck),1.5,trips/vehicle-day,Completed trips per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Inter-city/outstation,Fare per trip (deck),4200,INR/trip,Gross fare per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Inter-city/outstation,Gross revenue per vehicle-day (deck),6300,INR/vehicle-day,Trips x fare,India,Deck (no period),Deck p3,S-D/C-D,1.5 x 4200
+Inter-city/outstation,Gross revenue per paid trip-km (deck),18.53,INR/paid trip-km,Revenue per day / paid km per day,India,Deck (no period),Deck p3,S-D/C-D,6300/340
+Inter-city/outstation,Driver revenue per month (deck),163800,INR/vehicle-month,Gross fare revenue,India,Deck (no period),Deck p3,S-D/C-D,Gross fare not take-home
+Inter-city/outstation,Price sensitivity (deck),0.40,index,Deck price sensitivity coefficient,India,Deck (no period),Deck p3,S-D/C-D,No source
+Inter-city/outstation,EV share (deck),5,percent,EV share of segment,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Inter-city/outstation,Growth (deck),20,percent,Growth rate,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Premium individual mobility,Avg trip distance (deck),18.0,km/trip,Paid km per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Premium individual mobility,Km per day (deck),144,km/day,Paid km per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Premium individual mobility,Trips per day (deck),8.0,trips/vehicle-day,Completed trips per vehicle-day,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Premium individual mobility,Fare per trip (deck),520,INR/trip,Gross fare per trip,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Premium individual mobility,Gross revenue per vehicle-day (deck),4160,INR/vehicle-day,Trips x fare,India,Deck (no period),Deck p3,S-D/C-D,8 x 520
+Premium individual mobility,Gross revenue per paid trip-km (deck),28.89,INR/paid trip-km,Revenue per day / paid km per day,India,Deck (no period),Deck p3,S-D/C-D,4160/144; highest of 5
+Premium individual mobility,Driver revenue per month (deck),108160,INR/vehicle-month,Gross fare revenue,India,Deck (no period),Deck p3,S-D/C-D,Gross fare not take-home
+Premium individual mobility,Price sensitivity (deck),0.30,index,Deck price sensitivity coefficient,India,Deck (no period),Deck p3,S-D/C-D,No source; lowest (least price sensitive)
+Premium individual mobility,EV share (deck),15,percent,EV share of segment,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Premium individual mobility,Growth (deck),28,percent,Growth rate,India,Deck (no period),Deck p3,S-D/C-D,Unsourced
+Premium individual mobility,Verified evidence,Uber Black 34M km; premium AOV +9% vs +3%; riders pay 25-40% premium,Various,2025,Uber India 2025 report; Deloitte/FE,S-B/C-B,WTi doubling to 2000+ premium cars
+Shared mobility,Definition,Pooled/shared ride (any purpose),Any,Any,Service tier not trip purpose,N/A,N/A,N/A,Distinct from Premium; lower per-passenger revenue; higher vehicle utilisation
+All archetypes,Segment scoring (Airport),380.95,score (500 scale),11-criteria weighted score,India,Modelled,segment_prioritisation_v4.py,S-D/C-A (calc verified ratings unsourced),Ratings are analyst-assigned not data-derived
+All archetypes,Segment scoring (Commute),371.43,score (500 scale),11-criteria weighted score,India,Modelled,segment_prioritisation_v4.py,S-D/C-A,Lead margin +9.52 (2.5%)
+All archetypes,Segment scoring (Premium),309.52,score (500 scale),11-criteria weighted score,India,Modelled,segment_prioritisation_v4.py,S-D/C-A,
+All archetypes,Segment scoring (Intra-city),257.14,score (500 scale),11-criteria weighted score,India,Modelled,segment_prioritisation_v4.py,S-D/C-A,
+All archetypes,Segment scoring (Inter-city),219.05,score (500 scale),11-criteria weighted score,India,Modelled,segment_prioritisation_v4.py,S-D/C-A,
+All archetypes,Rating sensitivity,5 flips,scenarios,Single-point rating reductions that flip Airport to Commute,India,Modelled,segment_prioritisation_v4.py,S-D/C-A,5 of 110 perturbations flip leader
