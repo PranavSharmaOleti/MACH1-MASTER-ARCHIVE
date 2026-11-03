@@ -1,0 +1,6 @@
+segment,label,total_score,market_size_volume,revenue_potential,vehicle_utilisation,operating_predictability,customer_requirements,price_sensitivity,fleet_economics,ev_readiness,infrastructure_availability,competitive_intensity,scalability
+airport_transfer,Airport transfer,380.9523809523809,4,1,4,5,3,4,4,5,3,3,3
+daily_commute_subscription,Daily commute/subscription,371.4285714285714,3,3,3,5,4,1,4,4,4,4,4
+premium_shared,Premium/shared mobility,309.5238095238095,2,5,2,4,1,5,3,3,3,3,2
+intra_city_street_hail,Intra-city street-hail,257.14285714285717,5,4,1,1,5,1,2,2,5,1,5
+inter_city_outstation,Inter-city/outstation,219.04761904761904,2,2,5,3,2,3,1,1,1,4,2

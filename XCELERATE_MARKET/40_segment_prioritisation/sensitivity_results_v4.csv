@@ -1,0 +1,16 @@
+scheme,rank,segment,label,score
+equal_weights,1,daily_commute_subscription,Daily commute/subscription,354.55
+equal_weights,2,airport_transfer,Airport transfer,354.55
+equal_weights,3,premium_shared,Premium/shared mobility,300.0
+equal_weights,4,intra_city_street_hail,Intra-city street-hail,290.91
+equal_weights,5,inter_city_outstation,Inter-city/outstation,236.36
+volume_first,1,airport_transfer,Airport transfer,355.0
+volume_first,2,daily_commute_subscription,Daily commute/subscription,340.0
+volume_first,3,intra_city_street_hail,Intra-city street-hail,304.0
+volume_first,4,premium_shared,Premium/shared mobility,297.0
+volume_first,5,inter_city_outstation,Inter-city/outstation,250.0
+fleet_economics_first,1,airport_transfer,Airport transfer,400.0
+fleet_economics_first,2,daily_commute_subscription,Daily commute/subscription,380.0
+fleet_economics_first,3,premium_shared,Premium/shared mobility,310.0
+fleet_economics_first,4,intra_city_street_hail,Intra-city street-hail,220.0
+fleet_economics_first,5,inter_city_outstation,Inter-city/outstation,210.0

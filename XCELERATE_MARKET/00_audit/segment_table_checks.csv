@@ -1,0 +1,21 @@
+check,segment,metric,printed,recomputed,verdict,note
+C1,Intra-city street hail,km/day vs avg_km x trips/day,95,95.25,PASS,
+C1,Daily commute/subscr.,km/day vs avg_km x trips/day,176,176,PASS,
+C1,Airport transfer,km/day vs avg_km x trips/day,210,210,PASS,
+C1,Inter-city/outstation,km/day vs avg_km x trips/day,340,420,FAIL,"gap +80 km/day (+24%); 1.5 trips x 280 km = 420 km driven, table prints 340"
+C1,Premium/shared-prem.,km/day vs avg_km x trips/day,144,144,PASS,
+C2,Intra-city street hail,driver Rs/month vs trips x fare x 26d,"68,250","68,250",PASS,
+C2,Daily commute/subscr.,driver Rs/month vs trips x fare x 26d,"114,400","114,400",PASS,
+C2,Airport transfer,driver Rs/month vs trips x fare x 26d,"93,600","93,600",PASS,
+C2,Inter-city/outstation,driver Rs/month vs trips x fare x 26d,"163,800","163,800",PASS,
+C2,Premium/shared-prem.,driver Rs/month vs trips x fare x 26d,"108,160","108,160",PASS,
+C3,Intra-city street hail,implied Rs per vehicle-km,not shown,27.6,INFO,"gross Rs68,250/mo / (95 km/day x 26 d)"
+C3,Daily commute/subscr.,implied Rs per vehicle-km,not shown,25.0,INFO,"gross Rs114,400/mo / (176 km/day x 26 d)"
+C3,Airport transfer,implied Rs per vehicle-km,not shown,17.1,INFO,"gross Rs93,600/mo / (210 km/day x 26 d)"
+C3,Inter-city/outstation,implied Rs per vehicle-km,not shown,18.5,INFO,"gross Rs163,800/mo / (340 km/day x 26 d)"
+C3,Premium/shared-prem.,implied Rs per vehicle-km,not shown,28.9,INFO,"gross Rs108,160/mo / (144 km/day x 26 d)"
+C4,national,active cars implied by ride-flow proxy,"40,000-50,000 (addressable metros)","202,500 (national)",FAIL,"1,620,000 rides/day / 8 trips per car-day. The project's addressable-metro fleet is 20-25% of the national total implied by its own ride count; the two anchors are not from the same measurement."
+C5,national,EV share of ride-hailing fleet,10% (intra-city) / 18% (airport),16%-25%,CONFLICT,"Audience doc: 8,000-10,000 EVs of 40,000-50,000 addressable-metro vehicles."
+C6,segment set,orthogonality of the five segments,partition summing to 100%,not a partition,FAIL,"'Premium/shared-premium' is a service class, not a trip purpose: an airport run can be premium, an intra-city run can be shared. Summing these rows double-counts trips, so 61% + 19% + 5% cannot be a valid decomposition of any total."
+C7,Airport transfer,Rs per vehicle-km rank,declared the MARGIN segment,rank 5 of 5,FAIL,"Rs17.1/km is the lowest of the five segments (range Rs17.1-28.9). The airport 'margin' claim cannot rest on fare; it must rest on cost, which the table never computes."
+C8,intra-city vs commute,price sensitivity ordering,0.85 called 'highest'; commute printed 0.90,0.85 < 0.90,CONFLICT,"Already logged as MCH-I-003; also conflicts with slide 11's 0.30-0.35 for the margin segment, which uses a different, undefined index."

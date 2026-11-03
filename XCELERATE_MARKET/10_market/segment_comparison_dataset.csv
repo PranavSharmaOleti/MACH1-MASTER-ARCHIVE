@@ -1,0 +1,87 @@
+segment,metric,value,unit,source,publisher,date,reference_period,evidence_type,grade,notes
+intra_city,annual_rides_proxy,591300000,rides/yr,"Motilal Oswal via Business Standard",Business Standard,2025-04-18,2025 (unspecified month),reported,B,Platform ride-flow proxy; includes all three platforms; excludes street-hail/offline
+intra_city,avg_fare,300,INR/trip,"Times of India",Times of India,2025-06-23,2025 (unspecified),reported,B,Broad all-cab reference; not segment-specific
+intra_city,trips_per_driver_day,8,trips/day,"Times of India",Times of India,2025-06-23,2025 (unspecified),reported,B,Broad all-cab reference
+intra_city,avg_trip_km,12.7,km,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source; traced to NITDurgapur report
+intra_city,daily_km,95,km/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+intra_city,trips_per_day,7.5,trips/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+intra_city,fare_per_trip,350,INR,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+intra_city,growth_rate,0.18,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No derivation exists
+intra_city,ev_share,0.10,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Contradicts 16-25% implied by positioning doc
+intra_city,price_sensitivity,0.85,index,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Undefined index; contradicts 0.90 on next row
+intra_city,driver_revenue_monthly,68250,INR/mo,"Deck p3 (computed)",MACH1 deck,2026,deck claim,calc,A,trips/day x fare x 26 days = 7.5 x 350 x 26
+intra_city,revenue_per_km,27.6,INR/km,"Computed from deck table",this audit,2026,deck claim,calc,A,7.5 x 350 / 95
+intra_city,mach1_fit,weak,text,"Deck p3",MACH1 deck,2026,deck claim,assump,C,Subjective assessment
+commute,avg_trip_km,22.0,km,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+commute,daily_km,176,km/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+commute,trips_per_day,8.0,trips/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+commute,fare_per_trip,550,INR,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+commute,growth_rate,0.24,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No derivation exists
+commute,ev_share,0.12,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+commute,price_sensitivity,0.90,index,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Undefined index
+commute,driver_revenue_monthly,114400,INR/mo,"Deck p3 (computed)",MACH1 deck,2026,deck claim,calc,A,8.0 x 550 x 26
+commute,revenue_per_km,25.0,INR/km,"Computed from deck table",this audit,2026,deck claim,calc,A,8.0 x 550 / 176
+commute,mach1_fit,strong,text,"Deck p3",MACH1 deck,2026,deck claim,assump,C,Subjective assessment
+commute,riders_using_for_commute,0.50,fraction,"TGM Research (30 markets, India N=860)",TGM Research,2026,2026 survey,reported,B,50% of Indian respondents use ride-hailing for daily commute
+airport,avg_trip_km,35.0,km,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+airport,daily_km,210,km/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+airport,trips_per_day,6.0,trips/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+airport,fare_per_trip,600,INR,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+airport,growth_rate,0.26,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No derivation exists
+airport,ev_share,0.18,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Contradicts 10% intra-city EV share
+airport,price_sensitivity,0.35,index,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Undefined index
+airport,driver_revenue_monthly,93600,INR/mo,"Deck p3 (computed)",MACH1 deck,2026,deck claim,calc,A,6.0 x 600 x 26
+airport,revenue_per_km,17.1,INR/km,"Computed from deck table",this audit,2026,deck claim,calc,A,6.0 x 600 / 210
+airport,mach1_fit,strong,text,"Deck p3",MACH1 deck,2026,deck claim,assump,C,Subjective assessment
+airport,aai_passengers_apr_sep_2026,196240000,passengers,"AAI Traffic Report Sep 2026",Airports Authority of India,2026-09-30,Apr-Sep 2026,reported,A,159.54M domestic + 36.70M international
+airport,aai_passengers_sep_2026,30100000,passengers,"AAI Traffic Report Sep 2026",Airports Authority of India,2026-09-30,Sep 2026,reported,A,24.00M domestic + 6.10M international
+airport,aai_passengers_yoy_change,-0.029,fraction,"AAI Traffic Report Sep 2026",Airports Authority of India,2026-09-30,Apr-Sep 2026 vs 2025,reported,A,Total passengers down 2.9%
+airport,aai_top_domestic_delhi,4256929,passengers,"AAI Annexure-III Sep 2026",Airports Authority of India,2026-09-30,Sep 2026,reported,A,Delhi domestic passengers Sep 2026
+airport,aai_top_domestic_mumbai,2777538,passengers,"AAI Annexure-III Sep 2026",Airports Authority of India,2026-09-30,Sep 2026,reported,A,Mumbai domestic passengers Sep 2026
+airport,aai_top_domestic_bengaluru,2705725,passengers,"AAI Annexure-III Sep 2026",Airports Authority of India,2026-09-30,Sep 2026,reported,A,Bengaluru domestic passengers Sep 2026
+airport,blusmart_status,defunct,text,"Wikipedia (BluSmart)",Wikipedia,2025-04-17,2025,reported,A,Suspended all bookings 17 Apr 2025
+airport,blusmart_ev_leased,6400,vehicles,"SEBI interim order",SEBI,2025-04-15,2021-2024,reported,A,Gensol term loans for leasing EVs to BluSmart
+airport,blusmart_ev_purchased,4704,vehicles,"SEBI interim order",SEBI,2025-04-15,2021-2024,reported,A,Only Rs 567cr of Rs 977cr used for purchase
+intercity,avg_trip_km,280,km,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+intercity,daily_km,340,km/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Internally inconsistent: 1.5 x 280 = 420 != 340
+intercity,trips_per_day,1.5,trips/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+intercity,fare_per_trip,4200,INR,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+intercity,growth_rate,0.20,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No derivation exists
+intercity,ev_share,0.05,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+intercity,price_sensitivity,0.40,index,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Undefined index
+intercity,driver_revenue_monthly,163800,INR/mo,"Deck p3 (computed)",MACH1 deck,2026,deck claim,calc,A,1.5 x 4200 x 26
+intercity,revenue_per_km,18.5,INR/km,"Computed from deck table",this audit,2026,deck claim,calc,A,1.5 x 4200 / 340
+intercity,mach1_fit,weak,text,"Deck p3",MACH1 deck,2026,deck claim,assump,C,Subjective assessment
+intercity,fleetline_range_km,268,km,"Roadmap",MACH1 roadmap,2026,2035 vehicle spec,reported,A,At 15% reserve; 315 km at zero reserve
+intercity,delhi_jaipur_distance,280,km,"Roadmap",MACH1 roadmap,2026,route distance,reported,A,Marginal: 88.8% of usable pack
+premium,avg_trip_km,18.0,km,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+premium,daily_km,144,km/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+premium,trips_per_day,8.0,trips/day,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+premium,fare_per_trip,520,INR,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+premium,growth_rate,0.28,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Highest of all five; no derivation
+premium,ev_share,0.15,fraction,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,No source
+premium,price_sensitivity,0.30,index,"Deck p3 (unsourced)",MACH1 deck,2026,deck claim,assump,D,Undefined index
+premium,driver_revenue_monthly,108160,INR/mo,"Deck p3 (computed)",MACH1 deck,2026,deck claim,calc,A,8.0 x 520 x 26
+premium,revenue_per_km,28.9,INR/km,"Computed from deck table",this audit,2026,deck claim,calc,A,8.0 x 520 / 144
+premium,mach1_fit,moderate,text,"Deck p3",MACH1 deck,2026,deck claim,assump,C,Subjective assessment
+market,platform_rides_daily_uber,840000,rides/day,"Business Standard",Business Standard,2025-04-18,2025,Motilal Oswal via BS,reported,B,Vehicle-class scope needs confirmation
+market,platform_rides_daily_ola,460000,rides/day,"Business Standard",Business Standard,2025-04-18,2025,Motilal Oswal via BS,reported,B,Same source
+market,platform_rides_daily_rapido,320000,rides/day,"Business Standard",Business Standard,2025-04-18,2025,Motilal Oswal via BS,reported,B,May include bikes and autos
+market,platform_rides_annual,591300000,rides/yr,"Computed",this audit,2026,365-day run-rate,calc,A,1.62M x 365
+market,ev_cars_h1_2026,148023,vehicles,"AutoPunditz",AutoPunditz,2026,H1 2026,reported,B,EV passenger vehicles
+market,tata_ev_share_fy2026,0.388,fraction,"AutoPunditz",AutoPunditz,2026,FY2026,reported,B,Tata Motors
+market,mg_ev_share_fy2026,0.284,fraction,"AutoPunditz",AutoPunditz,2026,FY2026,reported,B,MG Motors
+market,mahindra_ev_share_fy2026,0.248,fraction,"AutoPunditz",AutoPunditz,2026,FY2026,reported,B,Mahindra
+market,karnataka_ev_share_aug2026,0.175,fraction,"AutoPunditz",AutoPunditz,2026-08,Aug 2026,reported,B,Of all new vehicles
+market,ola_flat_fee,67,INR/vehicle/day,"Positioning doc",MACH1 positioning,2025-06,Jun 2025,reported,B,Ola zero-commission model
+market,uber_rapido_flat_fee,29,INR/vehicle/day,"Positioning doc",MACH1 positioning,2025-06,Jun 2025,reported,C,Unverified; only in positioning doc
+market,blusmart_status,defunct,text,"Wikipedia/Reuters/SEBI",Wikipedia,2025-04-17,2025,reported,A,Suspended all bookings 17 Apr 2025
+market,localcircles_cancellation,0.74,fraction,"LocalCircles survey",LocalCircles,2025,2025 survey,reported,B,17,993 respondents, 325 districts
+market,localcircles_surge,0.62,fraction,"LocalCircles survey",LocalCircles,2025,2025 survey,reported,B,Same survey
+market,localcircles_waiting,0.53,fraction,"LocalCircles survey",LocalCircles,2025,2025 survey,reported,B,Same survey
+market,localcircles_cleanliness,0.30,fraction,"LocalCircles survey",LocalCircles,2025,2025 survey,reported,B,Same survey
+market,tgm_commute_share,0.50,fraction,"TGM Research",TGM Research,2026,2026 survey,reported,B,India N=860; 50% use ride-hailing for daily commute
+market,tco_delhi_5yr_nominal,0.145,fraction,"TCO analysis",MACH1 TCO,2026,Delhi 5-yr,calc,A,+14.5% EV advantage
+market,tco_delhi_5yr_incl_infra,0.065,fraction,"TCO analysis",MACH1 TCO,2026,Delhi 5-yr,calc,A,+6.5% including Rs 99,000/vehicle infra
+market,tco_delhi_5yr_npv,0.067,fraction,"TCO analysis",MACH1 TCO,2026,Delhi 5-yr,calc,A,+6.7% NPV@12%
+market,tco_driver_advantage_monthly,14200,INR/mo,"Driver/rider analysis",MACH1 driver analysis,2026,Delhi Rs 11/km,calc,A,+Rs 14,200/mo EV vs CNG

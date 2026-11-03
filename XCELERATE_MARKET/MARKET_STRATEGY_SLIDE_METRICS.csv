@@ -1,0 +1,52 @@
+metric,value,unit,definition,archetype,geography,period,source,evidence_status,calculation_notes
+591.3M platform rides,591300000,rides/yr,Annualised daily cab rides for Uber+Ola+Rapido,All (platform proxy),India,Jan 2025 data (annualised),Motilal Oswal via Business Standard 18 Apr 2025,S-B/C-B,840000+460000+320000=1620000/day x 365; annualised run-rate not observed annual total
+810M cab trips (Redseer),810000000,rides/yr,Cab share of total ride-hailing trips,All (market-wide),India,CY2025,Redseer via Business Standard 7 May 2026,S-B/C-B,27% x ~3.0B total; arithmetic derivation not separately published figure
+AAI passenger movements,195940000,passenger movements,Apr-Sep 2026 domestic+international,All (airport),India,Apr-Sep 2026,IndiaDispatch (secondary compilation of AAI monthly data),S-C/C-C,Sum of 6 monthly figures (33.83+36.98+33.39+30.63+31.01+30.10)M; exact 196.24M unverified
+Airport app-cab passenger journeys (low),78500000,passenger journeys/yr,20% mode share applied to ~392.5M annualised passengers,Airport,India,Modelled,Deck assumption (S-D/C-D),20% x 392.5M; passenger-based not vehicle trips
+Airport app-cab passenger journeys (high),117800000,passenger journeys/yr,30% mode share applied to ~392.5M annualised passengers,Airport,India,Modelled,Deck assumption (S-D/C-D),30% x 392.5M; passenger-based not vehicle trips
+Airport app-cab vehicle trips (illustrative),56000000,vehicle trips/yr,Passenger journeys divided by 1.4 occupancy,Airport,India,Illustrative,Assumption (S-D/C-D),78.5M-117.8M / 1.4; illustrative only not replacement estimate
+Airport gross revenue per paid trip-km,17.14,INR/paid trip-km,Gross fare revenue per day divided by paid km per day,Airport,India,Deck (no period),Deck p3 (S-D/C-D),3600/210; paid trip-km not total vehicle-km
+Commute gross revenue per paid trip-km,25.00,INR/paid trip-km,Gross fare revenue per day divided by paid km per day,Commute,India,Deck (no period),Deck p3 (S-D/C-D),4400/176
+Premium gross revenue per paid trip-km,28.89,INR/paid trip-km,Gross fare revenue per day divided by paid km per day,Premium,India,Deck (no period),Deck p3 (S-D/C-D),4160/144
+Intra-city gross revenue per paid trip-km,27.58,INR/paid trip-km,Gross fare revenue per day divided by paid km per day,Intra-city,India,Deck (no period),Deck p3 (S-D/C-D),2062.5/75 (approx)
+Inter-city gross revenue per paid trip-km,18.53,INR/paid trip-km,Gross fare revenue per day divided by paid km per day,Inter-city,India,Deck (no period),Deck p3 (S-D/C-D),4200/227 (using 340 km/day printed)
+Airport gross revenue per vehicle-day,3600,INR/vehicle-day,Trips per day x fare per trip,Airport,India,Deck (no period),Deck p3 (S-D/C-D),6 x 600
+Commute gross revenue per vehicle-day,4400,INR/vehicle-day,Trips per day x fare per trip,Commute,India,Deck (no period),Deck p3 (S-D/C-D),8 x 550
+Premium gross revenue per vehicle-day,4160,INR/vehicle-day,Trips per day x fare per trip,Premium,India,Deck (no period),Deck p3 (S-D/C-D),8 x 520
+Intra-city gross revenue per vehicle-day,2625,INR/vehicle-day,Trips per day x fare per trip,Intra-city,India,Deck (no period),Deck p3 (S-D/C-D),7.5 x 350
+Inter-city gross revenue per vehicle-day,6300,INR/vehicle-day,Trips per day x fare per trip,Inter-city,India,Deck (no period),Deck p3 (S-D/C-D),1.5 x 4200
+Airport pick-up fee (Delhi),290,INR/trip,Mandatory pick-up fee per app-cab trip at IGI,Airport,Delhi,2025 (increased ~40%),ET/TOI (S-A/C-A),Fee incidence (passenger vs fleet) unverified
+Delhi IGI charging stations,12,stations,Public charging stations at Delhi airport,Airport,Delhi,Oct 2022,DIAL blog (S-A/C-A),For passengers employees and cab service providers
+Delhi IGI charging points,22,points,Public charging points at Delhi airport,Airport,Delhi,Oct 2022,DIAL blog (S-A/C-A),22 points across 12 stations
+Mumbai Leela Mega Charger,16,guns,DC fast charging guns near CSI T2,Airport,Mumbai,Sep 2026,Fortune India (S-B/C-B),600 kW targeting taxis and ride-hailing fleets
+Everest Fleet,23500,vehicles (mixed),Mixed CNG/EV fleet across 7 cities,Corporate Commute/All,India,Current (FY24-25 ESG),Everest website; ESG report (S-C/C-C),Company-reported; not independently verified
+Everest EV fleet,2000,vehicles,EV count per ESG report,Corporate Commute/All,India,FY24-25,ESG report (S-C/C-C),Company-reported
+Everest CNG fleet,18000,vehicles,CNG count per ESG report,Corporate Commute/All,India,FY24-25,ESG report (S-C/C-C),Company-reported
+Lithium Urban EV fleet,3000,vehicles,EV fleet count,Corporate Commute,India,2025,Lithium website (S-C/C-C),Company-reported
+Lithium Urban chargers,600,chargers,Charging points,Corporate Commute,India,2025,Lithium website (S-C/C-C),Company-reported
+Lithium Urban trips/day,25000,trips/day,Trips per day,Corporate Commute,India,2025,Lithium website (S-C/C-C),Company-reported; implies ~8.3 trips/vehicle/day
+Evera airport bookings share,55,percent,Share of total bookings that are airport pick-ups,Airport,Delhi,2025,Rediff (Jun 2025) (S-B/C-B),Company-reported
+Evera avg trip fare,600,INR/trip,Average airport trip fare,Airport,Delhi,2025,Rediff (Jun 2025) (S-B/C-B),Company-reported
+Evera fleet,2200,vehicles (EV),Company-reported EV fleet,Airport,Delhi,2025-26,Evera (S-C/C-C),Company-reported; not independently verified
+Evera repossessed BluSmart EVs,500,vehicles,Repossessed from BluSmart lenders,Airport,Delhi,Oct 2026,BS/PTI (S-B/C-B),Documented transaction
+BluSmart stranded EVs,4704,vehicles,EVs acquired for Rs 568cr,All (historical),India,2025,SEBI interim order (S-A/C-A),Implied Rs 12.07 lakh/vehicle
+BluSmart fleet at suspension,8500,vehicles,Fleet size at suspension,Airport/All,India,Apr 2025,Press reports (S-B/C-B),Company-reported
+Ola revenue FY25,1170.9,crore,Consolidated revenue,All,India,FY25,CNBC-TV18/PTI (S-A/C-A),May 2026
+Ola loss FY25,662.4,crore,Consolidated net loss,All,India,FY25,CNBC-TV18/PTI (S-A/C-A),May 2026
+Rapido revenue FY25,934.4,crore,Operating revenue,All,India,FY25,Storyboard18 (S-A/C-A),2026
+Rapido loss FY25,258.4,crore,Net loss,All,India,FY25,Storyboard18 (S-A/C-A),2026
+Uber India revenue FY25,3849,crore,Operating revenue,All,India,FY25,Entrackr (S-A/C-A),2026
+Uber India loss FY25,1512,crore,Consolidated loss,All,India,FY25,Entrackr (S-A/C-A),2026
+Uber India km 2025,11600000000,km,Total km travelled in India,All,India,2025,Uber India report (S-B/C-B),6 Jan 2026
+Uber India EV km 2025,365000000,km,EV km travelled in India,All,India,2025,Uber India report (S-B/C-B),6 Jan 2026
+EV registrations FY26,200000,vehicles,e-4W registrations,All,India,FY26,Vahan Intelligence (S-A/C-A),+80% YoY
+EV share of 4W registrations,7.3-8.7,percent,EV share of new 4W registrations,All,India,Sep-Oct 2026,Vahan Intelligence (S-A/C-A),City outliers: Delhi 12.95% Chandigarh 13.06%
+CNG share of new PV registrations,22.7,percent,CNG share of new passenger vehicle registrations,All,India,Apr 2026,Vahan Intelligence (S-A/C-A),CNG crossed diesel
+Tata Xpres-T fleet price,13.04-14.98,lakh INR,Ex-showroom Delhi (Feb 2023),Corporate Commute,India,Feb 2023,Mint (S-B/C-B),FAME subsidy Rs 2.6L included
+Tata Xpres-T order book,40000,units,Order book,Corporate Commute,India,2023,Autocar India (S-B/C-B),Fleet 12-15% of Tata EV target
+Dzire Tour S retail price,6.24-7.10,lakh INR,Ex-showroom Delhi petrol/CNG,All (benchmark),India,2025,Maruti Suzuki (S-A/C-B),Official retail; fleet pricing unverified
+Delhi IGI charging stations,12,stations,Public charging stations at airport,Airport,Delhi,Oct 2022,DIAL blog (S-A/C-A),For passengers employees and cab service providers
+Delhi IGI charging points,22,points,Public charging points at airport,Airport,Delhi,Oct 2022,DIAL blog (S-A/C-A),22 points across 12 stations
+Mumbai Leela Mega Charger,16,guns,DC fast charging guns near CSI T2,Airport,Mumbai,Sep 2026,Fortune India (S-B/C-B),600 kW targeting taxis and ride-hailing fleets
+OMC operational chargers national,22753,stations,Operational public charging stations,All,India,1 Mar 2026,MHI (S-A/C-A),OMC-only; private CPOs additional
+Tata Power charging points,6700,points,Public and captive charging points,All,India,Sep 2026,Fortune India (S-B/C-B),Across 690+ cities; target 10000 by 2030
