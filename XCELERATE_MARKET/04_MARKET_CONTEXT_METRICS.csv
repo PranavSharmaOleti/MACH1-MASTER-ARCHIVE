@@ -1,0 +1,17 @@
+metric,value,unit,geography,period,definition,methodology,source,publication_date,evidence_grade,verification_status,interpretation_limit
+
+MC1,Platform cab rides (3 platforms),591.3M/yr,India,Jan 2025 data annualised,Annualised daily cab rides Uber+Ola+Rapido,Daily: 840k Uber + 460k Ola + 320k Rapido (Motilal Oswal via Business Standard 18 Apr 2025); annualised × 365,Business Standard (Motilal Oswal data) via BluSmart exit analysis,18 Apr 2025,S-B/C-B,Verified (verbatim from source),591.3M and ~810M market-wide cab trips measure different scopes and are not directly comparable. Do not combine.
+
+MC2,Market-wide cab trips (Redseer),~810M/yr,India,CY2025,Cab share of total ride-hailing trips,27% x ~3.0B total; arithmetic derivation,Business Standard (Redseer) via Bharat Taxi article,7 May 2026,S-B/C-B,Verified (with caveat),810M estimates total ride-hailing cab share; different scope from 591.3M three-platform annualised figure. Do not combine with MC1.
+
+MC3,Airport passenger movements,~196M (Apr-Sep 2026),India,Apr-Sep 2026,Domestic+international passenger movements,AAI half-yearly traffic report; secondary compilation sums to 195.94M; exact 196.24M unverified (PDF inaccessible),New Indian Express (AAI data) via 29 Oct 2026,29 Oct 2026,S-C/C-C,Partially verified (exact 196.24M unverified),Airport passenger movements ≠ app-cab vehicle trips ≠ vehicle trips. Secondary compilation sums to 195.94M; deck claims 196.24M. Exact figure unverified.
+
+MC4,EV share of new 4W registrations,7.3-8.7% (Oct 2026),India,Oct 2026,EV share of new four-wheeler registrations,Vahan Intelligence data,+80% YoY growth; Vahan Intelligence via EVreporter,EVreporter Oct 2026,S-A/C-A,Verified (Vahan data),EV share of new registrations ≠ EV fleet share or EV ride-hailing share. Registrations are new vehicle registrations, not operating fleet.
+
+MC5,GST: EV vs small ICE vs large/premium,5% vs 18% vs 40%,India,Vehicle purchase GST by category,GST notifications; Council FAQ,Sep 2025,S-A,Verified,Dzire Tour S qualifies as small car (1197cc 3995mm). Mid-size/large cars face 28%+cess (up to 50%). Do not apply as fleet purchase tax calculation without vehicle category verification.
+
+MC6,Maharashtra road tax (fleet CNG),14% (non-individual),India,Non-individual CNG registration,Maharashtra Transport Dept Jul 2025,14% under private-vehicle schedule for non-individual; motor cab schedule differs,Maharashtra Transport Dept,Jul 2025,S-A (with qualification),Verified (with qualification),14% applies to fleet CNG registrations under private-vehicle schedule. EVs are exempt. Motor cab schedule may differ from private vehicle schedule.
+
+MC7,PM E-DRIVE e-4W subsidy,None,India,Electric four-wheelers excluded,MHI portal; ETAuto Nov 2026,Rs 11,900cr extended to Mar 2028; e-4W not in scheme,MHI portal; ETAuto Nov 2026,S-A,Verified,No central subsidy for e-4W under PM E-DRIVE. State-level subsidies may apply.
+
+@43@
