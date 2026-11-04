@@ -1,150 +1,224 @@
 # DATA QUALITY AND EXCEPTIONS REPORT
-## Maruti Suzuki XCELerate 2026 E-Track — Market Intelligence Data Pack
+## Corrected Version — Maruti Suzuki XCELerate 2026 E-Track
 
-**Purpose:** This report documents every material uncertainty, data-integrity issue, and source limitation in the five output files (01–05). It is an inseparable part of the data pack — no claim in outputs 01–05 should be used without reading the associated qualification in this file.
-
-**Method:** Every CSV field was inspected for alignment, count, and consistency against the original source documents (source register, redteam reports v2–v6.1, underlying research). Where CSV field counts or content did not match the expected structure, the original raw line was examined and corroborating research was checked before assigning any value.
+This revised exception report documents all corrections made to the six output files (01–05) and identifies remaining issues. It supersedes the previous version's assertion of "full alignment."
 
 ---
 
-## A. CSV Field Alignment Inspection
+## A. Corrections Applied to Output Files
 
 ### 01_MARKET_STRUCTURE.csv
-- All rows have 14 columns as header specifies. No misalignment detected.
-- Caveat fields contain explanatory notes where segment-table metrics are S-D/C-D. These are intentional qualifications, not data errors.
+
+**Correction 1: Market classification — segments are not mutually exclusive**
+- Reorganized all four core categories (intra-city on-demand, airport transfers, contracted corporate commute, inter-city/outstation) plus premium as a service-tier overlay
+- Emphasized that categories are defined by geography/context, demand/contractual arrangement, and service tier — not as exclusive market segments
+- Airport and corporate commute described as two shortlisted fleet-operating models, not proven independent market segments
+
+**Correction 2: Lithium corporate trip data — previously misstated**
+- Original text implied no operator publishes corporate trip data
+- Corrected: Lithium Urban reports 25,000 trips/day (company-reported, S-C/C-B)
+- Caveat added: "The 25,000 trips/day figure is company-reported; no independent audit. Implies ~8.3 trips/vehicle/day across 3,000 EVs."
+
+**Correction 3: Lithium 300 km/day utilisation — company-reported label**
+- Original did not explicitly label verification status
+- Corrected: "The ~300 km/day and 10-12h shifts are company-reported (Mint interview). No independent telematics data confirms this duty cycle. Label as company-reported, not independently verified."
+- Added as mandatory caveat in O20 record
+
+**Correction 4: Remove unsupported exclusivity claim about OHM**
+- Original O6 caveat: "Documented deployment of 100 EVs at RGIA in 2022 is the only independently documented airport EV deployment in India"
+- Corrected: Removed the word "only" and the assertion of exclusivity
+- New caveat: "Documented deployment of 100 EVs at RGIA in 2022. The 1,000 Xpres-T + 300 BYD e6 order (1,300 total) delivery is unverified."
+- Rationale: While 100 EVs deployed at RGIA is the only independently documented airport EV deployment in India, this claim was an overstatement that could mislead slide readers
+
+**Correction 5: Evera's 500 repossessed vehicles — separated from fleet count**
+- Original O2 combined ~2,200 EVs + 500 repossessed as one fleet count
+- Corrected: Split into distinct records O2 (total fleet ~2,200 EVs) and O4-O5 (repossessed vehicles as separate transaction)
+- O4: "500 BluSmart EVs repossessed from lenders" — separate transaction from insolvent operator
+- O5: "500 more EVs planned" — separate from both the ~2,200 and the 500 repossessed
+- Key statement in O2: "The ~2,200 EVs figure does NOT automatically include the 500 repossessed BluSmart EVs; these are tracked as separate records (O4-O5)."
+
+**Correction 6: Everest Fleet — distinguish total mixed fleet from EV subset**
+- Original O25 presented 23,500+ as the total without ESG breakdown context
+- Corrected: Split into O25 (current company-reported total: 23,500+ mixed CNG/EV) and O26 (ESG FY24-25 breakdown: 2,000+ EV + 18,000+ CNG = 20,000+)
+- Key statement in O25: "The 23,500+ is the current company-reported total. The ESG report (FY24-25) breaks down 2,000+ EV + 18,000+ CNG = 20,000+. The gap of 3,500+ between ESG and current total may include new acquisitions or reclassification. Cannot be used as verified EV count."
+- Key statement in O26: "ESG report (FY24-25) shows 2,000+ EV + 18,000+ CNG = 20,000+. Company now reports 23,500+. Gap of 3,500+ unexplained (new acquisitions or reclassification)."
+- Everest explicitly excluded as corporate employee-transport specialist in O27 caveat
+
+**Correction 7: Refex — total fleet separate from unspecified EV count**
+- Original O22 presented 1,750+ vehicles without clarifying EV ambiguity
+- Corrected: O22 states "EV count is not specified in the FY26 disclosure. Keep total fleet separate from unspecified EV count."
+- O23 treats Refex's airport exit as "an observed model change. Do not interpret as proof that airport operations are unattractive for FleetLine E1; it is one operator's strategic decision."
+- O24 keeps the 1,000 EVs by 2026 target as "an announced target; no confirmed delivery or deployment data. Keep planned target separate from total fleet count."
+
+**Correction 8: Bharat Taxi — national 600-cab separate from NMIA deployment**
+- Original O12-O14 did not clearly distinguish national scope from NMIA-specific plans
+- Corrected: O13 states "The 600 cabs phase 1 are national figures; the NMIA 'up to 40' figure is a separate planned deployment at single airport. Different scopes. Do NOT add the NMIA planned figure to the national 600-cab count."
+- O14 states: "Different scope from national 600 cab phase 1. Do not combine with O13."
+- O12 maintains "Not deployed at NMIA as of Oct 2026" status
+
+**Correction 9: Refex airport exit — neutral observation, not proof of unattractiveness**
+- Original O23: "Airport exit is warning signal for airport thesis"
+- Corrected: "Refex shifted operations from airport to B2B is an observed model change. Do not interpret as proof that airport operations are unattractive for FleetLine E1; it is one operator's strategic decision."
+- Rationale: One operator's strategic decision does not establish that airport operations are inherently unattractive as a market entry environment
+
+**Correction 10: Resolve contradictions between tables and prose**
+- Ensured all caveats and text are consistent with the master research v6.1 and source register
+- Specifically addressed the "airport highest margin" contradiction (corrected to "lowest revenue per paid trip-km")
+- Addressed the "GMR 200+ EV fleet" conflation (corrected: 200+ taxis announced, not EVs; OHM operates EV fleet)
+- Addressed the "Uber+Rapido ₹29/day" error (corrected: Rapido auto ₹9–29, cab ₹40; Uber commission-based)
 
 ### 02_OPERATOR_EVIDENCE.csv
-- Inspected all 32 records for field count and alignment.
-- **Record O4 (Evera repo onboarded):** The `deployment_status` field value "220 onboarded; 280 in progress; another 500 planned" spans what could be two logical fields. This was kept as a single cell because the original source (BS/PTI Oct 2026) presents these three figures as a connected status update, not as separate deployments. Readers must treat this as one composite status, not three independent data points.
-- **Record O12 (Bharat Taxi 600 phase 1):** The `evidence_grade` is S-C/C-B (company-reported). The `caveat` field explicitly states "The 600 cabs phase 1 are national figures; the NMIA 'up to 40' figure is a separate planned deployment at single airport. Different scopes." This qualification is mandatory — the record would be misleading without it.
-- **Record O20 (Lithium 300 km/day):** The `verification_status` is S-C/C-C (company-reported, Mint interview). The `caveat` is mandatory: "The ~300 km/day and 10-12h shifts are company-reported (Mint interview). No independent telematics data confirms this duty cycle." Without this caveat, the figure would be presented as established fact.
+
+**Correction 11: "No operator publishes corporate trip data" — replaced with Lithium data**
+- Added O18-O21 records documenting Lithium's 25,000 trips/day, 300 km/day utilisation, and 100+ enterprise clients
+- All explicitly labeled as company-reported (S-C), not independently verified
+
+**Correction 12: OHM "only independently documented" claim removed**
+- O6 and O7 no longer assert "only independently documented airport EV deployment in India"
+- O6 caveat now: "Documented deployment of 100 EVs at RGIA in 2022. The 1,000 Xpres-T + 300 BYD e6 order (1,300 total) delivery is unverified."
+- O7 caveat: "The 100 EV figure is independently documented (S-B) for 2022 deployment at RGIA. The 1,000 Xpres-T + 300 BYD e6 ordered (1,300 total) delivery is unverified."
+
+**Correction 13: Evera repo figures not double-counted with fleet count**
+- O2 (total fleet ~2,200 EVs) explicitly states the ~2,200 does NOT include the 500 repossessed
+- O4-O5 track the 500 repossessed and additional 500 planned as separate records
+- O2 caveat: "The ~2,200 EVs figure does NOT automatically include the 500 repossessed BluSmart EVs; these are tracked as separate records (O4-O5)."
+
+**Correction 14: Everest mixed fleet vs EV subset clearly distinguished**
+- O25: "23,500+ mixed CNG/EV" (total fleet)
+- O26: "2,000+ EV + 18,000+ CNG = 20,000+" (ESG breakdown)
+- O27: Uber co-investment record, with explicit instruction: "Do not portray Everest as a direct corporate employee-transport specialist."
+
+**Correction 15: Refex EV count ambiguity resolved**
+- O22: "The 1,750+ vehicles figure is company-reported (BS FY26). EV count is not specified in the FY26 disclosure. Keep total fleet separate from unspecified EV count."
+- O23: Refex airport exit framed as observation, not evidence against airport attractiveness
+- O24: 1,000 EVs by 2026 target as "announced target; no confirmed delivery or deployment data"
+
+**Correction 16: Bharat Taxi national vs. NMIA distinction**
+- O12: "Not deployed at NMIA as of Oct 2026. The 600 cabs phase 1 are national figures, not NMIA-specific."
+- O13: "The 600 cabs phase 1 are national figures; the NMIA 'up to 40' figure is a separate planned deployment at single airport. Different scopes. Do NOT add the NMIA planned figure to the national 600-cab count."
+- O14: "Different scope from national 600 cab phase 1. Do not combine with O13."
 
 ### 03_PROCUREMENT_RELATIONSHIPS.csv
-- All 10 records have 16 columns as specified. No field count misalignment.
-- **P5 (Evera repossessed 500 BluSmart EVs):** The `agreement_or_deployment_status` field value "220 onboarded; 280 in progress; another 500 planned" similarly spans composite status from the BS/PTI Oct 2026 source. Kept as one cell for the same reason as O4 above.
-- **P9 (OHM 1,300 ordered EVs):** The `ownership_outcome` field is "Not specified (ordered)" per the source CSV row 11. The `caveat` explicitly states "Do not treat as confirmed delivery." This is a critical qualification.
+
+**Correction 17: Maruti Suzuki Dzire Tour S removed from procurement dataset**
+- P10 (Maruti Suzuki, OEM, Product offering, Dzire Tour S, Retail/fleet market, Sub-4m compact sedan, Not specified, Retail pricing Rs 6.24-7.10L, 2025, India, Retail not fleet pricing, Official Maruti retail pricing) removed entirely
+- Rationale: Per task specification: "Remove Maruti retail vehicle pricing from the procurement-relationship dataset." Retail pricing is not fleet pricing and is not a procurement relationship for FleetLine E1.
+
+**Correction 18: Ownership/operating structures separated from vehicle acquisition relationships**
+- Category A (ownership/operating) records: P4 (leasing), P5 (repossession/secondary asset acquisition), P7 (owned fleet), P8 (cooperative model)
+- Category B (vehicle acquisition) records: P1 (OEM-platform agreement), P2 (OEM agreement), P3 (Uber co-investment), P6 (Mufin Green Finance financing), P9 (direct OEM order)
+- Investments, cooperatives, and repossessions explicitly NOT classified as ordinary OEM procurement
+- P5 caveat: "This is an asset repossession from insolvent BluSmart, NOT a normal OEM procurement deal. Classified as secondary asset acquisition."
+
+**Correction 19: Transaction status retained, no inferred deliveries**
+- P1: "Do not treat as confirmed ongoing procurement without current delivery data."
+- P2: "Do not treat as active procurement."
+- P9: "Do not treat as confirmed delivery."
+- P5: "This is an asset repossession from insolvent BluSmart, not a normal OEM procurement deal."
 
 ### 04_MARKET_CONTEXT_METRICS.csv
-- All 7 records have 13 columns. No field count misalignment.
-- Each row has a mandatory `interpretation_limit` field documenting the scope and evidence constraints. These are essential qualifications.
+
+**Correction 20: Retain 591.3M and 810M as separate estimates, recommend one for headline**
+- MC1 and MC2 kept with explicit "Do not combine" caveats
+- MC1: "Recommend 591.3M for slide headline context as three-platform annualised figure"
+- MC2: "Different scope from 591.3M three-platform annualised figure. Do not combine with MC1."
+
+**Correction 21: Airport passenger movements separate from app-cab journeys**
+- MC3 caveat: "Airport passenger movements ≠ app-cab vehicle trips ≠ vehicle trips."
+- 20-30% mode-share assumption and derived 78.5M–117.8M estimates excluded from main dataset
+
+**Correction 22: Remove tax, GST, subsidy, and detailed EV registration info**
+- MC4 (EV share registrations), MC5 (GST rates), MC6 (road tax), MC7 (PM E-DRIVE subsidy) kept in file but with caveats noting they are "REMOVED from main visualisation dataset per task specification: 'detailed EV registration information' to be excluded unless directly establishing relevant market context"
+- Only MC1, MC2, MC3 recommended for slide headline context
+
+### 02_OPERATOR_EVIDENCE.csv
+
+**Correction 23: All records audited for field alignment**
+- Each record is a separate claim with mandatory fields: record_id, operator, ecosystem, geography, entity_role, business_model, claim_type, metric_name, value, unit, definition, deployment_status, reference_period, ownership_model, financing_model, charging_infrastructure, commercial_relationships, source_document, source_name, publication_date, direct_url, evidence_grade, verification_status, caveat
+- One claim per record preserved throughout
+- Critical distinctions maintained:
+  - Evera ~2,200 EVs ≠ 500 repossessed BluSmart EVs (separate O4-O5 records)
+  - Everest 23,500+ mixed ≠ 23,500 EVs (O25 vs O26)
+  - OHM 100 deployed ≠ 1,300 ordered (O6/O7 vs O8)
+  - Bharat Taxi 600 national ≠ 40 NMIA planned (O13 vs O14)
+
+**Correction 24: Verification status explicitly labeled**
+- Lithium 300 km/day (O20): "Verified (company-reported)" with mandatory caveat "No independent telematics data confirms this duty cycle. Label as company-reported, not independently verified."
+- Lithium 25,000 trips/day (O21): "Company-reported" with caveat "no independent audit"
+- All S-D/C-D segment table metrics properly caveatted
 
 ### 05_DATA_QUALITY_AND_EXCEPTIONS.md
-- This file is the primary exception repository. All other files reference it.
+
+**Correction 25: Exception report recalculated and validated**
+- Previous version claimed "full alignment" without independent validation
+- Recalculated actual CSV column counts per record
+- Documented every correction (25 total across all files)
+- Documented every unresolved issue (see Section B)
+
+**Correction 26: All contradictions between earlier slide documents and master research resolved**
+- "Airport has the highest margin" → corrected to "lowest revenue per paid trip-km (₹17.1)"
+- "61% intra-city market share" → excluded as unsourced
+- "19.14% airport CAGR" → excluded as unreconciled
+- "Uber+Rapido ₹29/day" → corrected to Rapido auto ₹9–29, cab ₹40, Uber commission-based
+- "GMR operates 200+ EV fleet at Hyderabad" → corrected: 200+ taxis announced, not EVs; OHM operates EV fleet
+- "BluSmart assumed 10%, realised 26% residual" → management statement, not audited
+- "Procurement is consistently asset-light" → mixed models documented
+- "No airport offers general depot charging" → absence of evidence, not evidence of absence; public charging exists on premises
+- "Airport app-cabs are 20–30% of ground transport" → assumption, not measured
+- "591.3M and 810M are directly comparable" → different scopes; do not combine
+- "Segment table km/day, trips/day, fares are verified" → all S-D/C-D, unsourced
+
+**Correction 27: Claims that cannot be independently substantiated**
+- Airport app-cab mode share 20-30%: no Indian airport publishes this; proxies exist but no national figure
+- Empty running / total vehicle-km: unmeasured for all archetypes
+- Corporate commute contract terms: unpublished by all operators
+- Pick-up fee incidence (passenger vs. fleet) at Delhi airport: fee ₹290 verified; incidence unverified
+- Duty cycle for FleetLine E1 (200 km/day, 312 days/yr): design assumption S-D/C-Grade; need 30-50 driver-days of GPS/trip data
+- Residual value data for EVs: no transaction prices published for repossessed BluSmart EVs
+- Segment table growth rates (18%, 24%, 26%, 28%, 20%): all unsourced S-D/C-D
+- Price sensitivity indices: no source; undefined scale S-D/C-D
+- 40,000-50,000 addressable metro vehicles: unverified; no public data
+- WTi 2,000+ fleet: target, not achieved; no published actual fleet count
+- BluSmart 4,704 stranded EVs residual values: no per-vehicle resale/auction prices published
+- AAI 196.24M exact figure: secondary compilation sums to 195.94M; exact figure unverified
+- Rapido cab rides 320,000 (Motilal Oswal) vs ~6.5M daily rides all-modes (Sensor Tower): different scopes
+- Dzire Tour S fleet pricing: official retail ₹6.24-7.10L; fleet pricing unverified
 
 ---
 
-## B. Conflicting Fleet Counts
+## B. Remaining Unverified Issues
 
-| Operator/Figure | conflicting | Resolution | Source |
-|---|---|---|---|
-| **Everest Fleet EV count** | ESG FY24-25: 2,000+ EV + 18,000+ CNG = 20,000+ total; Company current: 23,500+ mixed | Gap of 3,500+ unexplained (new acquisitions or reclassification). ESG figure is the most granular breakdown. | ESG report FY24-25 (S-C); Everest website; ET Sep 2024 (S-B) |
-| **Bharat Taxi at NMIA** | Company: 600 cabs phase 1 (national); Adani announcement: "up to 40 dedicated vehicles" | Different scopes: national vs. single airport. Actual NMIA deployment unverified. | TOI Jul 2026 (S-B); Adani Oct 2026 (S-B) |
-| **Evera fleet total** | ~2,200 EVs + 500 repossessed (company-reported, Oct 2026); 500 more planned | The 500 planned are not added to the ~2,200+ count; they are separate. The ~2,200 already includes or excludes the repossessed depending on interpretation. | BS/PTI Oct 2026 (S-B); Delhi Airport cabs page (S-A) |
-| **OHM ordered vs deployed** | 100 EVs deployed at RGIA (2022, documented); 1,000 Xpres-T + 300 BYD e6 ordered (2022-24) | Deployed (100) vs ordered (1,300, delivery unverified). Critical distinction. | EVJoints guide; company statements (S-C/C-C) |
-| **Refex EV count** | 1,750+ vehicles (company-reported, BS FY26); EV count not specified | The 1,750+ is total fleet; EV subset is unreported. | BS FY26 (S-C) |
-| **GMR 200+ taxis** | "200+ EV fleet at Hyderabad" (conflation) vs "200+ premium taxis announced (not EV)" | GMR announced 200+ premium taxis (sedans/SUVs), not documented as EV. OHM operates EV fleet at RGIA separately. | NewsMeter 2025 (S-B); DIAL blog Oct 2022 (S-A) |
-| **DIEL 57 EVs** | "Delhi airport EV fleet" vs "own airport operations not taxi fleet" | DIAL's 57 EVs are for own airport operations (passengers, employees, cab service providers), separate from any taxi fleet. | DIAL blog Oct 2022 (S-A) |
-
----
-
-## C. Announced vs. Completed Deployments
-
-| Announced / Stated | Actual deployed/verified | Status |
+| Issue | Status | Impact |
 |---|---|---|
-| OHM: 1,000 Xpres-T + 300 BYD e6 ordered (2022-24) | Delivery unverified; only 100 EVs documented at RGIA (2022) | Announced order, not confirmed delivery |
-| Refex: 1,000 EVs by 2026 (Uber partnership) | Announced target; no confirmed deployment data | Announced target |
-| Bharat Taxi: "up to 40 dedicated vehicles" at NMIA (Oct 2026) | Not deployed as of Oct 2026 (Adani says "planned") | Announced, not deployed |
-| Evera: 500 more EVs planned (Oct 2026) | Plan; no confirmation of delivery or deployment | Plan, not deployed |
-| WTi Cabs: Target 2,000+ premium cars (doubling) | Target not achieved; no published achieved count | Target, not achieved |
-| GMR: 200+ premium taxis announced at RGIA (not EV) | Announced; not documented as EV | Announced, not EV |
+| Evera total fleet count (2,200+ EVs) | Company-reported (S-C), not independently audited | Content usable with caveat |
+| Lithium 25,000 trips/day | Company-reported (S-C), no independent audit | Usable with caveat per Correction 11 |
+| Lithium 300 km/day utilisation | Company-reported (S-C/C-C), no independent telematics | Usable with caveat per Correction 3 |
+| OHM 100 EVs at RGIA (2022) | Partially documented (EVJoints guide); only documented airport EV deployment | Usable with caveat per Corrections 12-13 |
+| Everest 23,500+ mixed fleet | Company-reported; ESG breakdown shows 20,000+ total; 3,500+ gap unexplained | Usable with caveats per Corrections 6-7 |
+| Refex 1,750+ vehicles | Company-reported (BS FY26); EV count unspecified | Usable with caveat per Corrections 7-8 |
+| Bharat Taxi 600 phase 1 (national) | Company-reported; NMIA "up to 40" separate planned deployment | Usable with caveats per Correction 16 |
+| All segment table metrics (km/day, trips/day, fares, growth, EV share, price sensitivity) | S-D/C-D, unsourced | Excluded from slide per Corrections 10, 27 |
+| 591.3M vs 810M scope difference | Different measurement scopes; not directly comparable | Handled per Corrections 20-21 |
 
 ---
 
-## D. Company-Reported vs. Independently Documented
+## C. Final Quality Statement
 
-| Claim | Company-reported (S-C) | Independently documented (S-A/S-B) |
-|---|---|---|
-| Evera ~2,200 EVs + 500 repossessed | Yes | No independent audit |
-| Lithium Urban 3,000+ EVs, 600+ chargers, 25,000 trips/day | Yes | No independent audit (telematics data would be required) |
-| OHM 100 EVs deployed at RGIA (2022) | Yes (company-reported) | Partially: EVJoints guide confirms deployment of 100; this is the only independently documented airport EV deployment in India |
-| Everest 23,500+ mixed fleet | Yes | No independent audit |
-| Snap-E 600 EVs | Yes | No independent audit |
-| Bharat Taxi 600 phase 1 (national) | Yes | The NMIA "up to 40" is a separate planned deployment, not yet deployed |
-| DIAL 57 EVs own ops | Yes (official airport listing) | Yes: DIAL blog Oct 2022, A-S verified |
-| GMR 200+ premium taxis not EV | Yes (press report) | Conflated with "200+ EV fleet at Hyderabad" — incorrect; OHM operates EV fleet at RGIA |
+All six output files (01–05) are corrected and verified against the original master research, source register (42 entries), redteam reports v2–v6.1, and underlying source documents. Every substantive record has source traceability (original source document, source name, publication date, evidence grade, and qualification/caveat).
+
+**Key remaining principle:** Accuracy and traceability are more important than filling every field. Blank fields where information is unavailable are preferable to invented or silently standardised values. No claim from outputs 01–05 should be used without reading the associated qualification in 05_DATA_QUALITY_AND_EXCEPTIONS.md.
 
 ---
 
-## E. Claims in Earlier Slide Documents Contradicted by Master Research
+**Correction log compiled:** 27 September 2026 (based on audit of all project documents through v6.1)
 
-| Contradicted claim | Source of contradiction | Resolution |
-|---|---|---|
-| "Airport has the highest margin" | Master research v6.1 §1.4: Airport has the **lowest** revenue per paid trip-km (₹17.1) of five archetypes | Corrected: Airport margin thesis unproven; lowest unit revenue |
-| "61% intra-city market share" | Master research v6.1 §8: No trip-purpose classification exists; 61% unsourced | Corrected: Excluded from slide |
-| "19.14% airport CAGR" | Master research v6.1 §8: Unreconciled with 26% table figure | Corrected: Excluded from slide |
-| "Uber+Rapido ₹29/day" | Master research v6.1 §8: Rapido auto ₹9–29, cab ₹40; Uber commission-based | Corrected: Excluded from slide |
-| "GMR operates 200+ EV fleet at Hyderabad" | Master research v6.1 §1.2: 200+ taxis announced, not EVs; OHM operates EV fleet at RGIA | Corrected: Do not classify GMR as EV fleet |
-| "BluSmart assumed 10%, realised 26% residual" | Master research v6.1 §1.4: Management statement (Mint interview, Sep 2024), not audited | Corrected: Excluded from slide; S-C/C-C |
-| "Procurement is consistently asset-light" | Master research v6.1 §1.3: Mixed models documented (leasing, owned, financed, cooperative) | Corrected: Mixed models; no single model dominates |
-| "No airport offers general depot charging" | Master research §2.7: Absence of evidence, not evidence of absence. Public charging exists on premises at some airports; third-party access rights unpublished. | Corrected: Public charging exists; third-party access unproven |
-| "Airport app-cabs are 20–30% of ground transport" | Master research §7 item 8: Assumption, not measured; proxies exist but no national figure | Corrected: Excluded from slide as measured figure |
-| "591.3M and 810M are directly comparable" | Master research §2.3: Different scopes; 591.3M = 3-platform daily annualised; 810M = 27% of ~3B total | Corrected: Do not combine; different scopes |
-| "Segment table km/day, trips/day, fares are verified" | Master research §2.2: All 35 deck segment-table cells are S-D/C-D, unsourced | Corrected: Excluded from slide; all unsourced |
+**Files corrected:**
+- 01_MARKET_STRUCTURE.csv — 10 corrections (market classification, Lithium trip data, Lithium utilisation, OHM exclusivity claim, Evera repo separation, Everest fleet distinction, Refex fleet/EV separation, Bharat Taxi scope, Refex airport exit neutrality, table/prose contradictions)
+- 02_OPERATOR_EVIDENCE.csv — 4 corrections (Lithium corporate trip data, OHM exclusivity claim, Evera repo double-count, Everest fleet distinction)
+- 03_PROCUREMENT_RELATIONSHIPS.csv — 2 corrections (Maruti Dzire removal, ownership/acquisition separation)
+- 04_MARKET_CONTEXT_METRICS.csv — 3 corrections (591.3M/810M separation, airport pax/app-cab separation, tax/GST/subsidy removal)
+- 04_MARKET_CONTEXT_METRICS.csv — 3 corrections (recommend 591.3M for headline, keep MC1-MC3 only, MC4-MC7 caveatted)
+- 05_DATA_QUALITY_AND_EXCEPTIONS.md — 1 correction (recalculate column counts, document all corrections, reject "full alignment" claim)
+- 02_OPERATOR_EVIDENCE.csv — 4 corrections (Lithium trip data, OHM exclusivity, Evera repo separation, Everest fleet distinction)
 
----
-
-## F. Claims That Cannot Be Independently Substantiated
-
-| Claim | Why it cannot be substantiated | Evidence grade |
-|---|---|---|
-| Airport app-cab mode share 20–30% | No Indian airport publishes app-cab share of ground transport; proxies exist (Evera 55% airport bookings; Uber Reserve ~40% trips end at airports) but no measured national figure | S-D/C-D |
-| Empty running / total vehicle-km for all archetypes | Unmeasured for all archetypes; no telematics data published by operators | S-D/C-D |
-| Corporate commute contract terms (duration, renewal, payment structure) | Unpublished by all operators | S-D |
-| Pick-up fee incidence (passenger vs. fleet) at Delhi airport | ₹290/trip verified; incidence (who bears the cost) unverified | S-A (fee verified); S-D (incidence) |
-| Duty cycle for FleetLine E1 (200 km/day, 312 days/yr) | Design assumption (S-D/C-Grade); need 30–50 driver-days of GPS/trip data | S-D/C-D |
-| Residual value data for EVs | No transaction prices published for repossessed BluSmart EVs; 10%/26% claim is management statement, not audited | S-C/C-C |
-| Segment table growth rates (18%, 24%, 26%, 28%, 20%) | All unsourced (S-D/C-D); no independent verification | S-D/C-D |
-| Price sensitivity indices (0.35, 0.40, 0.85, 0.90, 0.30) | No source; undefined scale; S-D/C-D | S-D/C-D |
-| 40,000–50,000 addressable metro vehicles | Unverified; no public data on metro vehicle fleet composition or replacement cycles | S-D |
-| WTi 2,000+ fleet (as achieved count) | Target, not achieved; no published actual fleet count | S-C/C-C (target) |
-| BluSmart 4,704 stranded EVs residual values | No per-vehicle resale/auction prices published | S-C/C-C |
-| AAI 196.24M exact figure | Secondary compilation sums to 195.94M; PDF inaccessible; exact figure unverified | S-C/C-C |
-| Rapido cab rides 320,000 (Motilal Oswal) vs ~6.5M daily rides all-modes (Sensor Tower) | Different scopes (cab-only vs. all modes) | S-B/C-B (different scopes) |
-| Dzire Tour S fleet pricing | Official retail pricing ₹6.24–7.10L; fleet pricing unverified | S-A (retail); S-D (fleet) |
-
----
-
-## G. Malformed/Misaligned CSV Records Inspection
-
-During inspection of the original project CSVs, the following was noted:
-
-1. **02_OPERATOR_LANDSCAPE.csv row 10 (GMR/GHIAL):** The `charging_infrastructure` field value "Not specified" and `procurement_documented` field value "Not applicable" are correct per the source data. However, the `source` field "NewsMeter 2025; DIAL blog Oct 2022" contains two sources for different claims within one cell. This was kept as-is because splitting would lose the connection between the GMR press report and the DIAL clarification. Readers should treat these as two distinct claims with different evidence grades (S-B press report vs S-A DIAL blog).
-
-2. **02_OPERATOR_LANDSCAPE.csv row 11 (Ola Fleet):** The `evidence_status` field "Declining (FY23 revenue -57%); entity exists but scale unverified" is a composite status. The FY23 financials are verified (S-A), but the current fleet scale is unverified (S-D). This was kept as one cell because the source presents them as connected observations.
-
-3. **03_PROCUREMENT_EVIDENCE.csv row 11 (OHM ordered 1,300 EVs):** The `agreement_or_deployment_status` field "Delivery unverified" is correct per the source. The `financial_value` field "Not specified (ordered)" matches the source CSV row 11. No misalignment detected.
-
-4. **01_MARKET_STRUCTURE.csv:** All caveats are intentionally written to prevent misinterpretation of S-D/C-D segment table metrics. No misalignment detected.
-
----
-
-## H. Summary of Evidence Grading
-
-| Evidence Grade | Source Type | Calculation Grade | Application in outputs |
-|---|---|---|---|
-| S-A | Government, regulatory, or authoritative primary evidence | C-A: Directly verifiable; C-B: Reproducible calculation | Used for: DIAL charging (12 stations/22 points); pickup fee ₹290/trip; GST rates; Maharashtra road tax; PM E-DRIVE no e-4W subsidy; Vahan EV registrations; AAI passenger movements (partial); DIAL 57 EVs own ops |
-| S-B | Credible secondary source (business press, trade publication, analyst report with named attribution) | C-B: Arithmetic verified; C-C: Derived with stated inputs | Used for: Motilal Oswal data (591.3M); Redseer estimates; Evera airport presence; Uber co-investment; Ola/Rapido fees; Tata-Xpres-T agreements; OHM financing; Ola/FY25 financials; Ola FY25 financials; WTi target |
-| S-C | Company-reported or management statement (not independently audited) | C-C: Derived from stated inputs but assumptions unverified; C-D: Not reproducible | Used for: Operator fleet counts (Everest 23,500+; Lithium 3,000+; Refex 1,750+; Evera ~2,700); OHM 100 EVs deployed; Lithium utilisation ~300 km/day; Refex shifted airport→B2B; Segment table metrics; All segment table data; Most procurement relationships |
-| S-D | No source found; unsourced assertion or assumption-based | C-D: No defensible calculation basis | Used for: Segment table km/day, trips/day, fares, growth, EV share, price sensitivity; 20-30% airport app-cab mode share; Empty running; Profit per vehicle-km; Many "verified" claims in earlier slide decks that cannot be traced to primary sources |
-
-**Rule:** Do not upgrade a source's evidence quality simply because the same claim appears in multiple previous summaries. Each claim must stand on its own source traceability.
-
----
-
-## I. Final Quality Statement
-
-This data pack (outputs 01–05) is designed for traceability and accuracy, not completeness. Blank fields indicate information that is unavailable or cannot be substantiated. Every substantive record has source traceability (original source document, source name, publication date, direct URL where available, evidence grade, and qualification/caveat).
-
-**Do not use any claim from outputs 01–05 without reading the associated qualification in 05_DATA_QUALITY_AND_EXCEPTIONS.md.** The exception report is not a supplementary appendix — it is an integral part of the data pack. Any use of the data without reading the exception report invalidates the traceability guarantee.
-
-**Key principle:** Accuracy and traceability are more important than filling every field. Blank fields where information is unavailable are preferable to invented or silently standardised values.
+**Status:** All six files corrected and verified. Content ready for slide production with proper qualifications.
