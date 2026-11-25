@@ -13,14 +13,14 @@
 | Folder | Contents |
 |--------|----------|
 | `00_MASTER_DOCUMENTATION/` | Provenance register, issue log, corrected deck text, evidence binder, cheat sheet, Maruti panel questions, errata handout, revised deck changelog, 10-min presentation script, deck number extraction + gap analysis |
-| `01_PRESENTATION_AND_REPORTS/` | Final deck PDF + video + earlier drafts |
+| `01_PRESENTATION_AND_REPORTS/` | Final deck PDF and presentation video |
 | `02_PRIMARY_SOURCE_REPORTS/` | Key source reports (TCO, market, powertrain, battery, driver, roadmap) + Mach1 NITDurgapur round-1 materials |
 | `03_ENGINEERING_AND_MARKET_DATA/` | Vahan/autopunditz CSVs, market analysis script |
 | `04_MODELS_AND_CALCULATIONS/` | TCO engine (Python), battery model (Python) |
 | `05_CAD_AND_DRAWINGS/` | Dzire dimension drawing (DWG) |
-| `07_RESEARCH_AND_REFERENCES/` | Extracted papers + research references |
-| `08_IMAGES_SCREENSHOTS_AND_MEDIA/` | Screenshots and media |
-| `90_ARCHIVE_AND_OLD_VERSIONS/` | Superseded docs, duplicate artifacts, 172 MB zip |
+| `07_RESEARCH_AND_REFERENCES/` | Research papers (canonical copies) and source ZIPs |
+| `08_IMAGES_SCREENSHOTS_AND_MEDIA/` | Clean diagrams, rendered slides and media |
+| `90_ARCHIVE_AND_OLD_VERSIONS/` | Remaining duplicate artifacts and source ZIPs |
 
 ---
 
@@ -84,6 +84,10 @@
 ## GitHub
 
 https://github.com/PranavSharmaOleti/MACH1-MASTER-ARCHIVE
+
+## Repository cleanup (2026-11-25)
+
+Removed 60 files that were exact duplicates, superseded versions, draft decks, older redteam iterations, macOS resource forks, or screenshots exposing personal email addresses / submission-portal and third-party UI views. Canonical copies remain in their primary folders. The complete pre-cleanup tree is preserved on the `backup/pre-cleanup-20261125` branch.
 
 ## Git history
 
